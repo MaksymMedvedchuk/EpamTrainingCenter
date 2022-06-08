@@ -1,11 +1,11 @@
-package Chapter_1;
+package Chapter1.task4a;
 import java.util.Scanner;
-//Ввести пароль из командной строки и сравнить его со строкой-образцом.
 
-public class EnterPassword {
+
+public class PasswordsChecker {
     static String password = "123456";
     static String yourPassword;
-    static String ImputYourPassword() {
+    static String InputYourPassword() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter password ");
         yourPassword = scanner.nextLine();
@@ -18,8 +18,8 @@ public class EnterPassword {
         else
             System.out.println("Your Password is false");
     }
-    public static void main(String[] args) {
-        ImputYourPassword();
+    public void printComparePassword() {
+        InputYourPassword();
         ComparePasswords();
     }
 }
