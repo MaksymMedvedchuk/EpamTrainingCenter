@@ -1,10 +1,10 @@
-package Chapter1.task3a;
+package сhapter1.varianta.task3;
 
 public class Runner {
     public static void main(String[] args) {
         RandomNumbersPrinter randomNumbersPrinter = new RandomNumbersPrinter();
-        randomNumbersPrinter.withOutTransitionToTerm();
-        //randomNumbersPrinter.
+        randomNumbersPrinter.printRandomNumbers(true);
+
 
     }
 }

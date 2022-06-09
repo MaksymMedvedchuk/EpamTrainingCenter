@@ -1,8 +1,8 @@
-package Chapter1.task2a;
+package сhapter1.varianta.task2;
 
 public class Runner {
     public static void main(String[] args) {
         ReverseOrderArgsPrinter reverseOrderArgsPrinter = new ReverseOrderArgsPrinter();
-        reverseOrderArgsPrinter.displaysInverseArgument();
+        reverseOrderArgsPrinter.printInverseArguments(args);
     }
 }

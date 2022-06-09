@@ -1,4 +1,4 @@
-package Chapter1.task1a;
+package сhapter1.varianta.task1;
 
 import java.util.Scanner;
 public class UserGreeter {
