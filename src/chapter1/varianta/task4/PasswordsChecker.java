@@ -1,4 +1,4 @@
-package сhapter1.varianta.task4;
+package chapter1.varianta.task4;
 
 import java.util.Scanner;
 
@@ -24,5 +24,13 @@ public class PasswordsChecker {
     public void printComparePassword() {
         String inputPassword = readPassword();
         printComparePasswords(inputPassword);
+    }
+
+    public static class Runner {
+        public static void main(String[] args) {
+            PasswordsChecker passwordsChecker = new PasswordsChecker();
+            passwordsChecker.printComparePassword();
+
+        }
     }
 }

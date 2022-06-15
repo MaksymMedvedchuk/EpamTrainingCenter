@@ -1,4 +1,4 @@
-package сhapter1.varianta.task1;
+package chapter1.varianta.task1;
 
 public class Runner {
     public static void main(String[] args) {
