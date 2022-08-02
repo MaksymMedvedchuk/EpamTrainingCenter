@@ -1,4 +1,4 @@
-package сhapter1.varianta.task3;
+package chapter1.varianta.task3;
 
 public class RandomNumbersPrinter {
     private static final int MIN = 0;
@@ -13,7 +13,6 @@ public class RandomNumbersPrinter {
             else {
                 System.out.println(randomNumberWith);
             }
-
         }
     }
 }

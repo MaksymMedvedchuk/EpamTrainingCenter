@@ -26,11 +26,5 @@ public class PasswordsChecker {
         printComparePasswords(inputPassword);
     }
 
-    public static class Runner {
-        public static void main(String[] args) {
-            PasswordsChecker passwordsChecker = new PasswordsChecker();
-            passwordsChecker.printComparePassword();
 
-        }
-    }
 }
