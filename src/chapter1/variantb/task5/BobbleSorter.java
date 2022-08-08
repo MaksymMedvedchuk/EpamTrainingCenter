@@ -1,14 +1,14 @@
-package chapter1.variantb.task4;
+package chapter1.variantb.task5;
 
 import java.util.Arrays;
 
-public class BobbleSort {
+public class BobbleSorter {
 
-    public void sortBobble(int[] numbers) {
+    public void bobbleSort(int[] numbers) {
 
-        int number = numbers.length;
-        for (int i = number - 1; i > 0; i--) { //скорочується тому що вн цикл після кожної ітерації в кінець ставить найбільше число
-            for (int j = 1; j < number; j++) {
+        int length = numbers.length;
+        for (int i = length - 1; i > 0; i--) { //скорочується тому що вн цикл після кожної ітерації в кінець ставить найбільше число
+            for (int j = 1; j < length; j++) {
                 if (numbers[j] < numbers[j - 1]) {  //порівнює з попереднім і якщо він більний(якщо правий менше лівого), то умова виконується і ми їх міеяєм місцями
                     int tem = numbers[j];
                     numbers[j] = numbers[j - 1];
@@ -20,7 +20,7 @@ public class BobbleSort {
     }
 }
 
-//Післ першої ітепації найбільни ел-нт буде в кінці завжди?
+
 
 
 

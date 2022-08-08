@@ -4,8 +4,8 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class HelperScanner {
-    public static int[] getIntFromConsole() {
+public class ScannerHelper {
+    public static int[] getIntsFromConsole() {
         Scanner scanner = new Scanner(new FilterInputStream(System.in) {
             @Override
             public void close() throws IOException {

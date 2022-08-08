@@ -1,24 +1,35 @@
 package Test;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Test {
+    public static void main(String[] args) {
+        Integer[] array = {101, 111, 123};
+        print(array);
 
-    public void sortBobble(int[] numbers) {
-        int n = numbers.length;
-        int tem;
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < n - i; j++) {
-                if (numbers[j] < numbers[j - 1]) {
-                    tem = numbers[j];
-                    numbers[j] = numbers[j - 1];
-                    numbers[j - 1] = tem;
-                }
+
+    }
+
+    public static void print(Integer [] numbers){
+        String number;
+        AbstractList <Integer> list = new ArrayList<>();
+        for (Integer integer : numbers) {
+            number= Arrays.toString(numbers);
+            if (number.length() == 3 && number.charAt(0) != number.charAt(1) && number.charAt(1) != number.charAt(2) && number.charAt(0) != number.charAt(2)){
+                list.add(integer);
+
             }
         }
-        System.out.println(Arrays.toString(numbers));
+        System.out.println(list);
+
+
+
     }
+
 }
+
 
 
 
