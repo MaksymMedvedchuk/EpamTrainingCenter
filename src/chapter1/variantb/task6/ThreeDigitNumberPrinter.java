@@ -4,18 +4,22 @@ import java.util.ArrayList;
 
 public class ThreeDigitNumberPrinter {
     public void printerNumbers(int[] numbers) {
-        String number;
-        ArrayList <Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
         for (Integer integer : numbers) {
-            number = integer.toString();
-            if (number.length() == 3 && number.charAt(0) != number.charAt(1) && number.charAt(1) != number.charAt(2) && number.charAt(0) != number.charAt(2)) {
+            String number = integer.toString();
+            if (isThereNoIdenticalNumbers(number)) {
                 list.add(integer);
             }
         }
         System.out.println(list);
     }
+
+    private boolean isThereNoIdenticalNumbers(String number) {
+        return number.length() == 3 && number.charAt(0) != number.charAt(1) && number.charAt(1) != number.charAt(2) &&
+                number.charAt(0) != number.charAt(2);
+    }
 }
 
-//ArrayList не працює з примітивами, і тому створюємо String змінну, щоб через неї елементу масиву передати строкове значення через toString і потім порівнювати числа самого числа?
+
 
 

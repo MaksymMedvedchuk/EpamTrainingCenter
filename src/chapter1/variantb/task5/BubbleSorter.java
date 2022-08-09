@@ -2,7 +2,7 @@ package chapter1.variantb.task5;
 
 import java.util.Arrays;
 
-public class BobbleSorter {
+public class BubbleSorter {
 
     public void bobbleSort(int[] numbers) {
 

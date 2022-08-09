@@ -4,7 +4,7 @@ import helper.ScannerHelper;
 
 public class Runner {
     public static void main(String[] args) {
-        BobbleSorter bobbleSorter = new BobbleSorter();
-        bobbleSorter.bobbleSort(ScannerHelper.getIntsFromConsole());
+        BubbleSorter bubbleSorter = new BubbleSorter();
+        bubbleSorter.bobbleSort(ScannerHelper.getIntsFromConsole());
     }
 }
