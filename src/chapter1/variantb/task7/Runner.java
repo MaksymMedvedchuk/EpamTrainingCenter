@@ -5,7 +5,8 @@ import helper.ScannerHelper;
 public class Runner {
     public static void main(String[] args) {
         GreatestDivisorLeastMultipleNumbersPrinter numbersPrinter = new GreatestDivisorLeastMultipleNumbersPrinter();
-        numbersPrinter.printGreatestCommonDivisor(ScannerHelper.getIntsFromConsole());
-        numbersPrinter.printLeastCommonMultiple(ScannerHelper.getIntsFromConsole());
+        int[] consoleArgs = ScannerHelper.getIntsFromConsole();
+        numbersPrinter.printLeastCommonMultiple(consoleArgs);
+        numbersPrinter.printGreatestCommonDivisor(consoleArgs);
     }
 }

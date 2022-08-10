@@ -1,7 +1,7 @@
 package chapter1.variantb.task7;
 
 public class GreatestDivisorLeastMultipleNumbersPrinter {
-    private int printGreatestCommonDivisor(int a, int b) {
+    private int findGreatestCommonDivisor(int a, int b) {
         while (b > 0) {
             int temp = b;
             b = a % b;
@@ -13,13 +13,13 @@ public class GreatestDivisorLeastMultipleNumbersPrinter {
     public void printGreatestCommonDivisor(int[] numbers) {
         int result = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
-            result = printGreatestCommonDivisor(result, numbers[i]);
+            result = findGreatestCommonDivisor(result, numbers[i]);
         }
         System.out.println("Greatest common divisor: " + result);
     }
 
-    private int printLeastCommonMultiple(int a, int b) {
-        return a * (b / printGreatestCommonDivisor(a, b));
+    private int findLeastCommonMultiple(int a, int b) {
+        return a * (b / findGreatestCommonDivisor(a, b));
     }
 
     public void printLeastCommonMultiple(int[] numbers) {
@@ -29,7 +29,7 @@ public class GreatestDivisorLeastMultipleNumbersPrinter {
                     || (numbers[i] < 0 || numbers[0] < 0)) {
                 break;
             }
-            result = printLeastCommonMultiple(result, numbers[i]);
+            result = findLeastCommonMultiple(result, numbers[i]);
         }
         System.out.println("Least common multiple: " + result);
     }

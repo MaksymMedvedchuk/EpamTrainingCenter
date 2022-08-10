@@ -7,14 +7,14 @@ public class ThreeDigitNumberPrinter {
         ArrayList<Integer> list = new ArrayList<>();
         for (Integer integer : numbers) {
             String number = integer.toString();
-            if (isThereNoIdenticalNumbers(number)) {
+            if (isThereNoIdenticalDigits(number)) {
                 list.add(integer);
             }
         }
         System.out.println(list);
     }
 
-    private boolean isThereNoIdenticalNumbers(String number) {
+    private boolean isThereNoIdenticalDigits(String number) {
         return number.length() == 3 && number.charAt(0) != number.charAt(1) && number.charAt(1) != number.charAt(2) &&
                 number.charAt(0) != number.charAt(2);
     }
