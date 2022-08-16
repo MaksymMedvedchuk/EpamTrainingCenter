@@ -4,7 +4,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ScannerHelper {
+public class ScannerHelperInt {
     public static int[] getIntsFromConsole() {
         Scanner scanner = new Scanner(new FilterInputStream(System.in) {
             @Override

@@ -24,19 +24,3 @@ public class BubbleSorter {
 
 
 
-//        boolean isSorted = false; //мітка, що масив відсортувався, тобто елементи не міняються містами, поки це false
-//        while (!isSorted) {  //поки масив не вілсортован
-//            isSorted = true; //вважаємо, що масив відсортован,  якщо є перестановка кидаєм в false (16 рядок)
-//            for (int i = 0; i < numbers.length - 1; i++) { //numbers.length - 1 зрівнюємо і та і+1, і щоб не вийти за межі масиву, то довжина -1
-//                if (numbers[i] > numbers[i + 1]) {
-//                    int temp = numbers[i];
-//                    numbers[i] = numbers[i + 1];
-//                    numbers[i + 1] = temp;
-//                    isSorted = false;
-//                }
-//            }
-//        }
-//        System.out.println(Arrays.toString(numbers));
-//    }
-//}
-

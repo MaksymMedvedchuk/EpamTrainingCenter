@@ -1,24 +1,20 @@
 package chapter1.variantb.task6;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ThreeDigitNumberPrinter {
     public void printerNumbers(int[] numbers) {
-        ArrayList<Integer> list = new ArrayList<>();
-        for (Integer integer : numbers) {
-            String number = integer.toString();
-            if (isThereNoIdenticalDigits(number)) {
-                list.add(integer);
-            }
-        }
-        System.out.println(list);
+        Arrays.stream(numbers).mapToObj(Integer::toString)
+                .filter(e1 -> isThereNoIdenticalDigits(e1))
+                .forEach(e -> System.out.println("Number with non-repeating digits: " + e + " "));
+        System.out.println();
     }
 
-    private boolean isThereNoIdenticalDigits(String number) {
-        return number.length() == 3 && number.charAt(0) != number.charAt(1) && number.charAt(1) != number.charAt(2) &&
-                number.charAt(0) != number.charAt(2);
+    private boolean isThereNoIdenticalDigits(String e) {
+        return e.length() == 3 && e.charAt(0) != e.charAt(1) && e.charAt(1) != e.charAt(2) && e.charAt(0) != e.charAt(2);
     }
 }
+
 
 
 

@@ -5,26 +5,22 @@ import java.util.Comparator;
 
 public class SortNumberPrinter {
     public void printAscendingNumbers(int[] numbers) {
-        Arrays.sort(numbers);
-        System.out.print("Numbers in Ascending Order:");
-        for (int number : numbers) {
-            System.out.print(" " + number);
-        }
+        System.out.println("Numbers in Ascending Order: ");
+        Arrays.stream(Arrays.copyOf(numbers, numbers.length))
+                .sorted().forEach(System.out::println);
         System.out.println();
     }
 
     public void printDescendingNumbers(int[] numbers) {
-        System.out.print("Numbers in Descending Order: ");
-        int[] numberReverse = Arrays.stream(numbers).boxed()
+        System.out.println("Numbers in Descending Order: ");
+        Arrays.stream(numbers).boxed()
                 .sorted(Comparator.reverseOrder())
                 .mapToInt(Integer::intValue)
-                .toArray();
-        System.out.print(Arrays.toString(numberReverse));
+                .forEach(System.out::println);
     }
 }
 
 
-// .copyOf передаємо наш оригінальний масив
 // .stream створюємо послідовний потік numbers, .stream повернатає Integer
 // .boxed() перетворює стрим примітивів в обєктний тип (пакуємо в обгортку)
 //Comparator використовується в методах сортування
@@ -32,3 +28,7 @@ public class SortNumberPrinter {
 //і у Integer визиваємо intValue (повертає нам значення як int)
 //передаємо значення до масиву
 // Arrays.toString для перетворення масива в строку
+
+//Промежуточные операции следует воспринимать как «отложенные», т.е. они не меняют сами данные, а только задают правила
+// их изменения. А терминальные как раз инициируют всю цепочку преобразований, закрывают поток и возвращают модифицированные
+// данные. Закрытый поток повторно использовать нельзя. Термінальні потрібно, щоб потік працював

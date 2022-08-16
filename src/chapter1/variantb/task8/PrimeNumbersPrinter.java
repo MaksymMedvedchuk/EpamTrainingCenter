@@ -1,17 +1,13 @@
 package chapter1.variantb.task8;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PrimeNumbersPrinter {
     public void printPrimeNumbers(int[] numbers) {
-        ArrayList<Integer> primeNumbers = new ArrayList<>();
-        for (int number : numbers) {
-            if (isPrime(number)) {
-                primeNumbers.add(number);
-            }
-        }
-        System.out.print("Prime numbers: ");
-        primeNumbers.forEach(e -> System.out.print(e + " "));
+        Arrays.stream(numbers).boxed()
+                .filter(number -> isPrime(number))
+                .forEach(e -> System.out.println("Prime number: " + e + " "));
+        System.out.println();
     }
 
     private boolean isPrime(int number) {
@@ -23,6 +19,7 @@ public class PrimeNumbersPrinter {
         return true;
     }
 }
+
 
 
 
