@@ -1,10 +1,10 @@
 package chapter1.variantb.task1;
 
-import helper.ScannerHelperInt;
+import helper.ScannerHelper;
 
 public class Runner {
     public static void main(String[] args) {
         EvenAndOddNumbersPrinter evenAndOddNumbersPrinter = new EvenAndOddNumbersPrinter();
-        evenAndOddNumbersPrinter.printNumbers(ScannerHelperInt.getIntsFromConsole());
+        evenAndOddNumbersPrinter.printNumbers(ScannerHelper.getIntsFromConsole());
     }
 }

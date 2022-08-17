@@ -1,10 +1,10 @@
 package chapter1.variantb.task16;
 
-import helper.ScannerHelperInt;
+import helper.ScannerHelper;
 
 public class Runner {
     public static void main(String[] args) {
         PascalTriangleNumbers pascalTriangleNumbers = new PascalTriangleNumbers();
-        pascalTriangleNumbers.printerNumbers(ScannerHelperInt.getIntsFromConsole());
+        pascalTriangleNumbers.printerNumbers(ScannerHelper.getIntsFromConsole());
     }
 }

@@ -1,10 +1,10 @@
 package chapter1.variantb.task6;
 
-import helper.ScannerHelperInt;
+import helper.ScannerHelper;
 
 public class Runner {
     public static void main(String[] args) {
         ThreeDigitNumberPrinter threeDigitNumberPrinter = new ThreeDigitNumberPrinter();
-        threeDigitNumberPrinter.printerNumbers(ScannerHelperInt.getIntsFromConsole());
+        threeDigitNumberPrinter.printerNumbers(ScannerHelper.getIntsFromConsole());
     }
 }

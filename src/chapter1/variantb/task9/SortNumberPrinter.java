@@ -6,8 +6,9 @@ import java.util.Comparator;
 public class SortNumberPrinter {
     public void printAscendingNumbers(int[] numbers) {
         System.out.println("Numbers in Ascending Order: ");
-        Arrays.stream(Arrays.copyOf(numbers, numbers.length))
-                .sorted().forEach(System.out::println);
+        Arrays.stream(numbers)
+                .sorted()
+                .forEach(System.out::println);
         System.out.println();
     }
 

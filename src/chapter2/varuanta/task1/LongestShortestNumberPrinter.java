@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class LongestShortestNumberPrinter {
     public void printNumbers(String[] numbers) {
-        String max = "";
-        String min = Arrays.toString(numbers);
+        String max = "";//для того, щоб нам туди щось покласти
+        String min = numbers[0];
         for (String s : numbers) {
             if (s.length() > max.length()) max = s;
             if (s.length() < min.length()) min = s;

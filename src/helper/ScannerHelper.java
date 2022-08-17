@@ -4,7 +4,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ScannerHelperInt {
+public class ScannerHelper {
     public static int[] getIntsFromConsole() {
         Scanner scanner = new Scanner(new FilterInputStream(System.in) {
             @Override
@@ -21,8 +21,20 @@ public class ScannerHelperInt {
         scanner.close();
         return numbers;
     }
-}
 
+    public static String[] getStringFromConsole() {
+        Scanner scanner = new Scanner(new FilterInputStream(System.in) {
+            @Override
+            public void close() throws IOException {
+            }
+        });
+        System.out.print("Enter number of elements: ");
+        String size = scanner.nextLine();
+        System.out.print("Enter all the elements: ");
+        String line = scanner.nextLine();
+        return line.split(" ");
+    }
+}
 
 
 //Це ж звичайний метод? Ми його бачим в будь-якому класі, тому що public? Типу присвоюємо цей клас змінній і визиваєм його метод?
