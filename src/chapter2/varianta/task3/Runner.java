@@ -1,4 +1,4 @@
-package chapter2.varuanta.task3;
+package chapter2.varianta.task3;
 
 import helper.ScannerHelper;
 

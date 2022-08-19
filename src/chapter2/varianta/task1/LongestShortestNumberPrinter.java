@@ -1,6 +1,4 @@
-package chapter2.varuanta.task1;
-
-import java.util.Arrays;
+package chapter2.varianta.task1;
 
 public class LongestShortestNumberPrinter {
     public void printNumbers(String[] numbers) {

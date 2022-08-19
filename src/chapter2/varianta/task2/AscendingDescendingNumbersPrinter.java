@@ -1,4 +1,4 @@
-package chapter2.varuanta.task2;
+package chapter2.varianta.task2;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -6,9 +6,9 @@ import java.util.Comparator;
 public class AscendingDescendingNumbersPrinter {
     public void printAscendingNumbers(String[] numbers) {
         System.out.println("Numbers in Ascending Order: ");
-        Arrays.stream(numbers).
-                mapToInt(Integer::parseInt).          //mapToInt отримати потік типу int і в дужках строки конвертим в інти
-                sorted().forEach(System.out::println);
+        Arrays.stream(numbers)
+                .map(Integer::parseInt)          //mapToInt отримати потік типу int і в дужках строки конвертим в інти
+                .sorted().forEach(System.out::println);
         System.out.println();
     }
 
