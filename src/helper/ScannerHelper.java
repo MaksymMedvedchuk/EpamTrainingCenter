@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class ScannerHelper {
     public static int[] getIntsFromConsole() {
         Scanner scanner = getClosedScanner();
-        System.out.print("Enter number of elements: ");
+        System.out.print("Enter size of array: ");
         int size = scanner.nextInt(); //scanner.nextInt() метод зчитує число, яке ми ввели і присвоює його size
         int[] numbers = new int[size]; //створюємо масив int з дожиною size
-        System.out.print("Enter all the elements: "); //заповнюємо масив
+        System.out.print("Enter numbers: "); //заповнюємо масив
         for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt(); //заповнюємо масив елементами, які вводимо з клавіатури
         }
@@ -18,7 +18,7 @@ public class ScannerHelper {
         return numbers;
     }
 
-    public static String[] getStringFromConsole() {
+    public static String[] getStringsFromConsole() {
         Scanner scanner = getClosedScanner();
         System.out.print("Enter separate elements: ");
         String line = scanner.nextLine();

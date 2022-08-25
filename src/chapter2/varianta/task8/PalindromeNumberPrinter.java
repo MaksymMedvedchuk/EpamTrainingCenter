@@ -6,7 +6,7 @@ public class PalindromeNumberPrinter {
     public void printerNumbers(String[] numbers) {
         Arrays.stream(numbers)
                 .filter(this::isPalindrome)
-                .limit(2)
+                .skip(1)
                 .forEach(System.out::println);
     }
 

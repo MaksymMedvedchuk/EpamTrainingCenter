@@ -8,19 +8,17 @@ public class AscendingOrderNumberPrinter {
     public void printNumbers(String[] numbers) {
         List<String> list = Arrays.asList(numbers);//asList формує список на основі масива
         Optional<Integer> increasingNumbers = list.stream()//NullPointerExceptions
-                .filter(this::getOrderlyIncreaseDigits)
+                .filter(this::getOrderlyIncreasingDigits)
                 .map(Integer::parseInt)
-                .sorted()
                 .findFirst();
-               //.reduce(Integer::min);//метод min повертає клас Math в якому обчислюється найменше поточне значення?//reduce повертає результат операції
         if (increasingNumbers.isPresent()) {
-            System.out.println(increasingNumbers.get()); //чому не можна визвати get в самому потоку?
+            System.out.println(increasingNumbers.get());
         } else {
             System.out.println("Not ascending order number");
         }
     }
 
-    public boolean getOrderlyIncreaseDigits(String input) {
+    public boolean getOrderlyIncreasingDigits(String input) {
         for (int i = 1; i < input.length(); i++) {
             if (input.charAt(i) - input.charAt(i - 1) != 1)
                 return false;
@@ -29,6 +27,16 @@ public class AscendingOrderNumberPrinter {
     }
 }
 
+
+//    TreeSet<Integer> set = new TreeSet<>();
+//        for (String number : numbers) {
+//                if (getOrderlyIncreasingDigits(number)) {
+//                int i = Integer.parseInt(number);
+//                set.add(i);
+//                }
+//                }
+//                System.out.println(set.first());
+//                }
 
 
 //Array цей клас можна використовувати для створення масиву

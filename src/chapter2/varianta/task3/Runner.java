@@ -5,6 +5,6 @@ import helper.ScannerHelper;
 public class Runner {
     public static void main(String[] args) {
         LengthGreaterLessAverageNumbersPrinter lessAverageNumbersPrinter = new LengthGreaterLessAverageNumbersPrinter();
-        lessAverageNumbersPrinter.printNumbers(ScannerHelper.getStringFromConsole());
+        lessAverageNumbersPrinter.printNumbers(ScannerHelper.getStringsFromConsole());
     }
 }

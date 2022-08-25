@@ -5,6 +5,6 @@ import helper.ScannerHelper;
 public class Runner {
     public static void main(String[] args) {
         PalindromeNumberPrinter palindromeNumberPrinter = new PalindromeNumberPrinter();
-        palindromeNumberPrinter.printerNumbers(ScannerHelper.getStringFromConsole());
+        palindromeNumberPrinter.printerNumbers(ScannerHelper.getStringsFromConsole());
     }
 }

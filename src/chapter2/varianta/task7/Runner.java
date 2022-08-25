@@ -1,10 +1,10 @@
-package chapter2.varianta.task4;
+package chapter2.varianta.task7;
 
 import helper.ScannerHelper;
 
 public class Runner {
     public static void main(String[] args) {
-        MinDifferentDigitsNumbersPrinter digitsNumbersPrinter = new MinDifferentDigitsNumbersPrinter();
+        DifferentDigitsNumbersPrinter digitsNumbersPrinter = new DifferentDigitsNumbersPrinter();
         digitsNumbersPrinter.printNumbers(ScannerHelper.getStringsFromConsole());
     }
 }
