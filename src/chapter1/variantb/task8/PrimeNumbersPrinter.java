@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class PrimeNumbersPrinter {
     public void printPrimeNumbers(int[] numbers) {
-        Arrays.stream(numbers).boxed()
+        Arrays.stream(numbers)
+                .boxed()
                 .filter(this::isPrime)
                 .forEach(e -> System.out.println("Prime number: " + e + " "));
         System.out.println();

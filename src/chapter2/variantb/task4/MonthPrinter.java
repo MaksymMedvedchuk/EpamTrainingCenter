@@ -1,13 +1,14 @@
 package chapter2.variantb.task4;
 
+import java.text.DateFormatSymbols;
+import java.util.Locale;
+
 public class MonthPrinter {
 
     public void printMonth(int input) throws IndexOutOfBoundsException {
-        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
-                "October", "November", "December"};
         try {
-            String month = months[input - 1];
-            System.out.println("This month is: " + month);
+            String monthName = new DateFormatSymbols(Locale.ENGLISH).getMonths()[input];
+            System.out.println(input + " " + monthName);
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Month not found!");
             e.printStackTrace();

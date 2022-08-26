@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class ThreeDigitNumberPrinter {
     public void printerNumbers(int[] numbers) {
-        Arrays.stream(numbers).mapToObj(Integer::toString)
-                .filter(e1 -> isThereNoIdenticalDigits(e1))
+        Arrays.stream(numbers)
+                .mapToObj(Integer::toString)
+                .filter(this::isThereNoIdenticalDigits)
                 .forEach(e -> System.out.println("Number with non-repeating digits: " + e + " "));
         System.out.println();
     }

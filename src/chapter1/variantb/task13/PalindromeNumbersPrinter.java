@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class PalindromeNumbersPrinter {
     public void printerNumbers(int[] numbers) {
-        Arrays.stream(numbers).mapToObj(Integer::toString)
+        Arrays.stream(numbers)
+                .mapToObj(Integer::toString)
                 .filter(this::isPalindrome)
                 .forEach(e -> System.out.println("Palindrome number: " + e));
     }
