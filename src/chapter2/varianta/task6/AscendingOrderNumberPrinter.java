@@ -11,11 +11,7 @@ public class AscendingOrderNumberPrinter {
                 .filter(this::getOrderlyIncreasingDigits)
                 .map(Integer::parseInt)
                 .findFirst();
-        if (increasingNumbers.isPresent()) {
-            System.out.println(increasingNumbers.get());
-        } else {
-            System.out.println("Not ascending order number");
-        }
+        System.out.println(increasingNumbers.isPresent() ? increasingNumbers.get() : "Not ascending order number");
     }
 
     public boolean getOrderlyIncreasingDigits(String input) {

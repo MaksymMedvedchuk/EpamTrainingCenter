@@ -1,36 +1,33 @@
 package test;
 
-import java.text.DateFormatSymbols;
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Test {
-    public static String getMonthForInt(int num) {
-        String month = "wrong";
-        DateFormatSymbols dfs = new DateFormatSymbols();
-        String[] months = dfs.getMonths();
-        if (num >= 0 && num <= 11 ) {
-            month = months[num];
+    public void print(String[] numbers) {
+        List<Integer> list = Arrays.stream(numbers)
+                .filter(this::isPalindrome)
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+        if (list.size() >= 2){
+            System.out.println(list.get(1));
         }
-        return month;
+        else {
+            System.out.println(list.get(0));
+        }
+
+
+    }
+    private boolean isPalindrome(String input) {
+        StringBuilder palindromeNumber = new StringBuilder();
+        for (int i = input.length() - 1; i >= 0; i--) {
+            palindromeNumber.append(input.charAt(i));
+        }
+        return input.equals(palindromeNumber.toString());
     }
 
-
-
-
- //   public void print(String[] numbers) {
-//        try {
-//            for (String number : numbers) {
-//                int x = Integer.parseInt(number);
-//                String monthName = new DateFormatSymbols().getMonths()[x - 1];
-//                System.out.println(monthName);
-//
-//            }
-//        } catch (IndexOutOfBoundsException e) {
-//            System.out.println("No month");
-//            e.printStackTrace();
-//        }
-    }
+}
 
 
 

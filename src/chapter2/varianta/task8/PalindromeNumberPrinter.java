@@ -1,22 +1,17 @@
 package chapter2.varianta.task8;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PalindromeNumberPrinter {
     public void printerNumbers(String[] numbers) {
-        List<Integer> palindromesList = new ArrayList<>();
-        for (String number : numbers) {
-            if (isPalindrome(number)) {
-                int palindromeNumber = Integer.parseInt(number);
-                palindromesList.add(palindromeNumber);
-            }
-        }
-        if (palindromesList.size() >= 2) {
-            System.out.println("Palindrome numbers is: " + palindromesList.get(1));
-        } else {
-            System.out.println("Palindrome numbers is: " + palindromesList.get(0));
-        }
+        List<Integer> palindromeList = Arrays.stream(numbers)
+                .filter(this::isPalindrome)
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+        System.out.println(palindromeList.size() >= 2 ? "Palindrome number: " + palindromeList.get(1) :
+                "Palindrome number: " + palindromeList.get(0));
     }
 
     private boolean isPalindrome(String input) {
@@ -27,18 +22,19 @@ public class PalindromeNumberPrinter {
         return input.equals(palindromeNumber.toString());
     }
 }
+//спитати по робоботі стріма!!!
 
 
-//        List <String> list = new ArrayList<>();
-//        Arrays.stream(numbers)
-//                .filter(this::isPalindrome)
-//                .mapToInt(Integer::parseInt)
+//        List<Integer> palindromesList = new ArrayList<>();
+//        for (String number : numbers) {
+//            if (isPalindrome(number)) {
+//                int palindromeNumber = Integer.parseInt(number);
+//                palindromesList.add(palindromeNumber);
+//            }
+//        }
+//        if (palindromesList.size() >= 2) {
+//            System.out.println("Palindrome numbers is: " + palindromesList.get(1));
+//            }
+//        else {
+//            System.out.println("Palindrome numbers is: " + palindromesList.get(0));
 //
-//                .forEach(x -> {
-//                    if (list.size() >= 2) {
-//                        System.out.println(list.get(1));
-//                    } else {
-//                        System.out.println(list.get(0));
-//                    }
-//                });
-//    }
