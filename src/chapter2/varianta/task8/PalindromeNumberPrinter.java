@@ -10,8 +10,9 @@ public class PalindromeNumberPrinter {
                 .filter(this::isPalindrome)
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
-        System.out.println(palindromeList.size() >= 2 ? "Palindrome number: " + palindromeList.get(1) :
-                "Palindrome number: " + palindromeList.get(0));
+        if (palindromeList.isEmpty()) System.out.println("Not palindrome numbers!");
+        else System.out.println("Palindrome number: " + (palindromeList.size() >= 2 ? +palindromeList.get(1) :
+                +palindromeList.get(0)));
     }
 
     private boolean isPalindrome(String input) {
@@ -22,7 +23,6 @@ public class PalindromeNumberPrinter {
         return input.equals(palindromeNumber.toString());
     }
 }
-//спитати по робоботі стріма!!!
 
 
 //        List<Integer> palindromesList = new ArrayList<>();

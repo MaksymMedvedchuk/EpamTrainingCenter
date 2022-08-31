@@ -1,60 +1,47 @@
 package chapter3.varianta.student;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.function.Predicate;
 
 public class Student {
     private int id;
-    private String Surname;
-    private String Name;
+    private String surname;
+    private String name;
     private LocalDate birthday;
     private String address;
-    private int phoneNumber;
+    private String phoneNumber;
     private String faculty;
     private int course;
     private String group;
 
-    public Student(int id, String surname, String name, LocalDate birthday, String address, int phoneNumber
+    public Student(int id, String surname, String name, LocalDate birthday, String address, String phoneNumber
             , String faculty, int course, String group) {
-        this.id = id;
-        Surname = surname;
-        Name = name;
-        this.birthday = birthday;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.faculty = faculty;
-        this.course = course;
-        this.group = group;
-    }
-
-    public static void checkStudent(List<Student> studentList, Predicate<Student> predicate) {
-        for (Student student : studentList) {
-            if (predicate.test(student)) {
-                student.printInfo();
-            }
-        }
-    }
-
-    public void printInfo() {
-        System.out.println(id + " " + Surname + " " + Name + " " + birthday + " " + address + " " + phoneNumber
-                + " " + faculty + " " + course + " " + group);
+        setId(id); //тут через сеттерб, щоб ми могли змінювати нам метод
+        setSurname(surname);
+        setName(name);
+        setBirthday(birthday);
+        setAddress(address);
+        setPhoneNumber(phoneNumber);
+        setFaculty(faculty);
+        setCourse(course);
+        setGroup(group);
     }
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "\nStudent{" +
                 "id=" + id +
-                ", Surname='" + Surname + '\'' +
-                ", Name='" + Name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
                 ", birthday=" + birthday +
                 ", address='" + address + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", course=" + course +
                 ", group='" + group + '\'' +
                 '}';
     }
+
+    //так як кожен обєкт належить до класу Обджект то в нього є метод toString і цим методом ми його оверайдим щоб вивело в читабельній формі?
 
     public int getId() {
         return id;
@@ -65,19 +52,19 @@ public class Student {
     }
 
     public String getSurname() {
-        return Surname;
+        return surname;
     }
 
     public void setSurname(String surname) {
-        Surname = surname;
+        this.surname = surname;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public LocalDate getBirthday() {
@@ -96,11 +83,11 @@ public class Student {
         this.address = address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

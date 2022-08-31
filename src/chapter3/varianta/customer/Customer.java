@@ -5,16 +5,28 @@ public class Customer {
     private String surname;
     private String name;
     private String address;
-    private int creditCardNumber;
-    private int bankAccountNumber;
+    private String creditCardNumber;
+    private String bankAccountNumber;
 
-    public Customer(int id, String surname, String name, String address, int creditCardNumber, int bankAccountNumber) {
-        this.id = id;
-        this.surname = surname;
-        this.name = name;
-        this.address = address;
-        this.creditCardNumber = creditCardNumber;
-        this.bankAccountNumber = bankAccountNumber;
+    public Customer(int id, String surname, String name, String address, String creditCardNumber, String bankAccountNumber) {
+        setId(id);
+        setSurname(surname);
+        setName(name);
+        setAddress(address);
+        setCreditCardNumber(creditCardNumber);
+        setBankAccountNumber(bankAccountNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "\nCustomer{" +
+                "id=" + id +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", creditCardNumber='" + creditCardNumber + '\'' +
+                ", bankAccountNumber='" + bankAccountNumber + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -49,19 +61,19 @@ public class Customer {
         this.address = address;
     }
 
-    public int getCreditCardNumber() {
+    public String getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(int creditCardNumber) {
+    public void setCreditCardNumber(String creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public int getBankAccountNumber() {
+    public String getBankAccountNumber() {
         return bankAccountNumber;
     }
 
-    public void setBankAccountNumber(int bankAccountNumber) {
+    public void setBankAccountNumber(String bankAccountNumber) {
         this.bankAccountNumber = bankAccountNumber;
     }
 }
