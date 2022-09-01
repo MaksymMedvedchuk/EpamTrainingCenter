@@ -1,6 +1,6 @@
 package chapter3.varianta.customer;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private int id;
     private String surname;
     private String name;
@@ -76,4 +76,26 @@ public class Customer {
     public void setBankAccountNumber(String bankAccountNumber) {
         this.bankAccountNumber = bankAccountNumber;
     }
+
+    @Override
+    public int compareTo(Customer o) {
+        int result = name.compareTo(o.name);
+        if (result == 0) {
+            result = surname.compareTo(o.surname);
+        }
+        return result;
+    }
+
+     static class Comparator implements java.util.Comparator<Customer> {
+        @Override
+        public int compare(Customer o1, Customer o2) {
+            int result = o1.name.compareTo(o2.name);
+            if (result == 0) {
+                result = o1.surname.compareTo(o2.surname);
+            }
+            return result;
+        }
+    }
 }
+
+//int сортує по <>, а String по алфавітному порядку

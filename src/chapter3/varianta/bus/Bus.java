@@ -19,7 +19,7 @@ public class Bus {
 
     @Override
     public String toString() {
-        return "Bus{" +
+        return "\nBus{" +
                 "surnameAndInitials='" + surnameAndInitials + '\'' +
                 ", busNumber='" + busNumber + '\'' +
                 ", routeNumber='" + routeNumber + '\'' +

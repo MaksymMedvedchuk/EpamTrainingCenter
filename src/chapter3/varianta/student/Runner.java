@@ -1,7 +1,6 @@
 package chapter3.varianta.student;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Runner {
     private static final StudentRepository STUDENT_REPOSITORY = new StudentRepository();
@@ -12,16 +11,16 @@ public class Runner {
         fillRepository();//цей метод заповнює наш STUDENT_REPOSITORY
 
         System.out.println("List of students of a given faculty:");
-        System.out.println(STUDENT_REPOSITORY.findStudentByFaculty("Java"));
+        System.out.println(STUDENT_REPOSITORY.findByFacultyStudents("Java"));
         System.out.println();
         System.out.println("List faculty and course:");
-        System.out.println(STUDENT_REPOSITORY.findStudentFacultyAndCourse("Java", 1));
+        System.out.println(STUDENT_REPOSITORY.findByFacultyAndCourseStudents("Java", 1));
         System.out.println();
         System.out.println("List of birth year:");
-        System.out.println(STUDENT_REPOSITORY.findStudentBirthAfterGivenYear(1990));
+        System.out.println(STUDENT_REPOSITORY.findByBirthAfterGivenYearStudents(1990));
         System.out.println();
         System.out.println("List of group:");
-        System.out.println(STUDENT_REPOSITORY.findGroupList("1A"));
+        System.out.println(STUDENT_REPOSITORY.finByGroupStudents("1A"));
     }
 
     private static void fillRepository() {

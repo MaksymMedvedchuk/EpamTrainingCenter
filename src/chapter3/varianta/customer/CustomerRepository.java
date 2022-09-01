@@ -1,7 +1,6 @@
 package chapter3.varianta.customer;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class CustomerRepository {
@@ -12,24 +11,29 @@ public class CustomerRepository {
         customerList.add(input);
     }
 
-    public List<Customer> findAlCardIntervalCustomer(String cardInterval) {
+    public List<Customer> findByCardFromInterval(String min, String max) {
         List<Customer> list = new ArrayList<>();
         for (Customer customer : customerList) {
-            if (customer.getCreditCardNumber().charAt(0) > cardInterval.charAt(0) && customer.getCreditCardNumber().charAt(15) < cardInterval.charAt(15)) {
+            if (Long.parseLong(customer.getCreditCardNumber()) >= Long.parseLong(min)
+                    && Long.parseLong(customer.getCreditCardNumber()) <= Long.parseLong(max)) {
                 list.add(customer);
             }
         }
         return list;
     }
 
-    public List<Customer> findAlphabeticalOrderCustomer() {
-              //       return customerList.stream().sorted().collect(Collectors.toList());//робив спочатку, но ClassCastException
-        List<Customer> list = new ArrayList<>();
-        for (Customer customer : customerList) {
-            list.add(customer);
-            list.sort(Comparator.comparing(Customer::getName).thenComparing(Customer::getSurname));
-        }
+    public List<Customer> findByNameSurnameOrder() {
+        //       Перша реалізація через створення класу, який імплементить Comparator
+        List<Customer> list = new ArrayList<>(customerList);
+        list.sort(new Customer.Comparator());
         return list;
+//        Друга реалізація через інтерфейс Comparable
+//        return customerList.stream().sorted().collect(Collectors.toList());
+//        Третя через метод sort з використанням Comparator
+//        List<Customer> list = new ArrayList<>(customerList);
+//        list.sort(Comparator.comparing(Customer::getName).
+//        thenComparing(Customer::getSurname));
+//        return list;
     }
 }
 

@@ -1,16 +1,26 @@
 package test;
 
-import helper.ScannerHelper;
-
-import java.util.Locale;
+import java.util.*;
 
 public class TestRunner {
     public static void main(String[] args) {
 
 
-        String s1 = "123";
-        String s2 = "444";
-        System.out.println(s1.charAt(2));
+        ArrayList<Object> al = new ArrayList<>();
+        al.add(6);
+        al.add(1);
+        al.add(2);
+        al.add(5);
+
+
+        Iterator<Object> it = al.iterator();
+        while(it.hasNext()){
+            Object el = it.next();
+            System.out.println(el + " ");
+        }
+
+
+
 
 
 

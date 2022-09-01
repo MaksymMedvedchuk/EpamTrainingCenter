@@ -28,7 +28,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "\nStudent{" +
+        return "Student{" +
                 "id=" + id +
                 ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
@@ -40,8 +40,6 @@ public class Student {
                 ", group='" + group + '\'' +
                 '}';
     }
-
-    //так як кожен обєкт належить до класу Обджект то в нього є метод toString і цим методом ми його оверайдим щоб вивело в читабельній формі?
 
     public int getId() {
         return id;
