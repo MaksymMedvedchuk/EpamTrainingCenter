@@ -11,6 +11,7 @@ public class Runner {
         Bus thirdBus = new Bus("Driver2 J.M.", "L775FD", "720A", "TOYOTA",
                 2015, 550000);
 
+
         BUS_REPOSITORY.addDBuses(firstBus);
         BUS_REPOSITORY.addDBuses(secondBus);
         BUS_REPOSITORY.addDBuses(thirdBus);
@@ -19,7 +20,7 @@ public class Runner {
         System.out.println();
         System.out.println(BUS_REPOSITORY.findByExploitationMoreGivenPeriod(30));
         System.out.println();
-        System.out.println(BUS_REPOSITORY.findByMileageGreaterGivenDistance(500000));
+        System.out.println(BUS_REPOSITORY.findByMileageGreaterThan(500000));
     }
 }
 

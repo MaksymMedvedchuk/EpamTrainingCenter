@@ -1,6 +1,6 @@
 package chapter3.varianta.student;
 
-import helper.FixToStringArrayList;
+import helper.FixedToStringArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class StudentRepository {
     }
 
     private List<Student> fixToString(List<Student> students){
-        List<Student> list = new FixToStringArrayList<>(); //створюємо FixToStringArrayList в який додаємо всіх студентів і нам повертає новий ліст
+        List<Student> list = new FixedToStringArrayList<>(); //створюємо FixToStringArrayList в який додаємо всіх студентів і нам повертає новий ліст
         list.addAll(students);
         return list;
     }

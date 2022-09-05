@@ -3,7 +3,7 @@ package helper;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class FixToStringArrayList<T> extends ArrayList<T> { //естендиться від AbstractCollection в якого є toString
+public class FixedToStringArrayList<T> extends ArrayList<T> { //естендиться від AbstractCollection в якого є toString
     @Override
     public String toString() {
         Iterator<T> it = iterator();
