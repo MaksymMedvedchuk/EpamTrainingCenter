@@ -1,13 +1,45 @@
 package chapter4.task1;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Text {
+    private final List<Sentence> sentenceList = new ArrayList<>();
+    private String header;
 
-    private List<Sentence> sentenceList;
-    private String header = "Header";
+    public void addSentence(Sentence sentence) {
+        sentenceList.add(sentence);
+    }
 
-    public Text(List<Sentence> sentenceList) {
-        this.sentenceList = sentenceList;
+    public void printText() {
+        System.out.println(header);
+        for (Sentence sentence : sentenceList) {
+            System.out.println(sentence.toString().replaceAll("[\\s]+", " ").trim());
+        }
+    }
+
+    public void setHeader(String header) {
+        this.header = header;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Text)) return false;
+        Text text = (Text) o;
+        return Objects.equals(sentenceList, text.sentenceList) && Objects.equals(header, text.header);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sentenceList, header);
     }
 }
+
+
+
+
+
+

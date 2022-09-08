@@ -11,12 +11,12 @@ public class FixedToStringArrayList<T> extends ArrayList<T> { //естендит
             return "[]";
 
         StringBuilder sb = new StringBuilder();
-        sb.append('[');
+        sb.append(' ');
         for (; ; ) {
             T e = it.next();
             sb.append(e == this ? "(this Collection)" : e);
             if (!it.hasNext())
-                return sb.append(']').toString();
+                return sb.append(' ').toString();
             sb.append(',').append('\n');
         }
     }
