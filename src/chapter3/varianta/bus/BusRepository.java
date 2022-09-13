@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 public class BusRepository {
 
@@ -48,6 +49,19 @@ public class BusRepository {
             }
         }
         return list;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BusRepository)) return false;
+        BusRepository that = (BusRepository) o;
+        return Objects.equals(busList, that.busList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(busList);
     }
 }
 

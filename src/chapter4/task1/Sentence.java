@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
 public class Sentence {
     private final List<Word> wordList = new ArrayList<>();
 
     public void addWord(Word word) {
-        wordList.add(word);
+        wordList.add(wordList.isEmpty() ? word.makeFirstLetterUpperCase() : word.makeAllLettersLowerCase());
     }
 
     @Override
@@ -28,12 +27,8 @@ public class Sentence {
 
     @Override
     public String toString() {
-        //в самому Word лежить String, а joining працює зі String, навіщо map?
         StringJoiner joiner = new StringJoiner(" ", "", ".");
-        for (Word word : wordList) {
-            String toString = word.toString();
-            joiner.add(toString);
-        }
+        wordList.stream().map(Word::toString).forEach(joiner::add);
         return joiner.toString();
     }
 }

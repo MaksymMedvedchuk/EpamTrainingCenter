@@ -3,7 +3,6 @@ package chapter4.task1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Text {
     private final List<Sentence> sentenceList = new ArrayList<>();
@@ -16,12 +15,8 @@ public class Text {
     public void printText() {
         System.out.println(header);
         for (Sentence sentence : sentenceList) {
-            System.out.println(sentence.toString().replaceAll("[\\s]+", " ").trim());
+            System.out.println(sentence.toString());
         }
-    }
-
-    public void setHeader(String header) {
-        this.header = header;
     }
 
     @Override
@@ -35,6 +30,14 @@ public class Text {
     @Override
     public int hashCode() {
         return Objects.hash(sentenceList, header);
+    }
+
+    public String getHeader() {
+        return header;
+    }
+
+    public void setHeader(String header) {
+        this.header = header;
     }
 }
 

@@ -11,8 +11,10 @@ public class PalindromeNumberPrinter {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
         if (palindromeList.isEmpty()) System.out.println("Not palindrome numbers!");
-        else System.out.println("Palindrome number: " + (palindromeList.size() >= 2 ? +palindromeList.get(1) :
-                +palindromeList.get(0)));
+        else {
+            System.out.println("Palindrome number: " + (palindromeList.size() >= 2 ? + palindromeList.get(1) :
+                    +palindromeList.get(0)));
+        }
     }
 
     private boolean isPalindrome(String input) {

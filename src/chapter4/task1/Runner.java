@@ -2,10 +2,10 @@ package chapter4.task1;
 
 public class Runner {
     public static void main(String[] args) {
-        Word word1 = new Word("    I");
+        Word word1 = new Word("    i  ");
         Word word2 = new Word("study");
         Word word3 = new Word("JAVA    ");
-        Word word4 = new Word("  And");
+        Word word4 = new Word("  and");
         Word word5 = new Word("drink  ");
         Word word6 = new Word("bear   ");
 

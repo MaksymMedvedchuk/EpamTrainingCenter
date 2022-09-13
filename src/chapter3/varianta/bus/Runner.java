@@ -21,6 +21,9 @@ public class Runner {
         System.out.println(BUS_REPOSITORY.findByExploitationMoreGivenPeriod(30));
         System.out.println();
         System.out.println(BUS_REPOSITORY.findByMileageGreaterThan(500000));
+        System.out.println();
+        System.out.println(firstBus.hashCode());
+        System.out.println(secondBus.hashCode());
     }
 }
 
