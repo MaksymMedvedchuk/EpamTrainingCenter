@@ -1,12 +1,10 @@
 package chapter4.task1;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.util.Objects;
 
 public class Word {
     private String word;
-    
+
     public Word(String word) {
         setWord(word);
     }
