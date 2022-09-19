@@ -7,7 +7,7 @@ public class Runner {
         planet.addMainLand(mainland);
         planet.setName("Mars");
         System.out.println(planet.getName());
-        planet.printNameMainland();
-        planet.printQuantityMainland();
+        planet.printMainlandName();
+        planet.printMainlandQuantity();
     }
 }

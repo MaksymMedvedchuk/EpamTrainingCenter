@@ -2,19 +2,38 @@ package chapter4.task4;
 
 public class Runner {
     public static void main(String[] args) {
-        Country country = new Country();
-        country.setCapitalName("kYiv");
-        country.printCountryCapital();
-        Region region1 = new Region("Kyivsliy", 45021.5, "Kyiv");
-        Region region2 = new Region("Sumskiy", 69012.5, "Sumi");
-        Region region3 = new Region("Luckiy", 35624.25, "Luck");
-        Region region4 = new Region("Lvivskiy", 50364.25, "Lviv");
-        country.addRegions(region1);
-        country.addRegions(region2);
-        country.addRegions(region3);
-        country.addRegions(region4);
-        country.printQuantityRegions();
-        country.printCountryArea();
-        country.printRegionCentres();
+        City kyiv = new City("Kyiv", true, true);
+        City lviv = new City("Lviv", true);
+        City lutck = new City("Lutck", true);
+        City irpin = new City("Rodatichi");
+
+        District kievskiy = new District("Kievskiy");
+        District lvivskiy = new District("Lvivskiy");
+        District lutskiy = new District("Lutskiy");
+
+        kievskiy.addCity(kyiv);
+        kievskiy.addCity(irpin);
+        lvivskiy.addCity(lviv);
+        lutskiy.addCity(lutck);
+
+        Region kievska = new Region("Kievskaya", 50256.25, "Kyiv");
+        Region lvivska = new Region("Lvivska", 45692.48,"Lviv" );
+        Region lutska = new Region("Lutska", 35254.25, "Lutck");
+        kievska.addDistrict(kievskiy);
+        lvivska.addDistrict(lvivskiy);
+        lutska.addDistrict(lutskiy);
+
+        Country ukraine = new Country("Ukraine");
+
+        ukraine.addRegion(kievska);
+        ukraine.addRegion(lvivska);
+        ukraine.addRegion(lutska);
+        ukraine.printRegionsQuantity();
+        System.out.println();
+        ukraine.printCountryArea();
+        System.out.println();
+        ukraine.printRegionCentres();
+        System.out.println();
+        ukraine.printCountryCapital();
     }
 }

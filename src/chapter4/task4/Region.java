@@ -9,18 +9,13 @@ public class Region {
     private String regionalCenter;
     List<District> districtList = new ArrayList<>();
 
-    public Region(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public Region(double area) {
-        this.area = area;
-    }
-
     public Region(String regionName, double area, String regionalCenter) {
         this.regionName = regionName;
         this.area = area;
         this.regionalCenter = regionalCenter;
+    }
+
+    public Region() {
     }
 
     public void addDistrict(District district){

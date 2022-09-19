@@ -12,13 +12,13 @@ public class Planet {  //чому планета містить тільки м�
         mainlandList.add(mainland);
     }
 
-    public void printNameMainland() {
+    public void printMainlandName() {
         for (Mainland mainland : mainlandList) {
             System.out.println(mainland);
         }
     }
 //плутаюсь де створювати методи
-    public void printQuantityMainland(){
+    public void printMainlandQuantity(){
         System.out.println(mainlandList.size());
     }
 

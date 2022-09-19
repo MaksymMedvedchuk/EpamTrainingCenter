@@ -1,22 +1,24 @@
 package chapter4.task19;
 
 public class Photo {
-    private String namePhoto;
+    private String photoName;
 
-    public Photo(String namePhoto) {
-        setNamePhoto(namePhoto);
+    public Photo(String photoName) {
+        this.photoName = photoName;
     }
 
-    public String getNamePhoto() {
-        return namePhoto;
+    public String getPhotoName() {
+        return photoName;
     }
 
-    public void setNamePhoto(String namePhoto) {
-        this.namePhoto = namePhoto;
+    public void setPhotoName(String photoName) {
+        this.photoName = photoName;
     }
 
     @Override
     public String toString() {
-        return namePhoto;
+        return photoName;
     }
 }
+
+
