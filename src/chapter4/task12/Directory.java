@@ -1,23 +1,24 @@
 package chapter4.task12;
 
-public class Directory extends File {
-    private String folder;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Directory(String name) {
-        super(name);
+public class Directory extends File {
+    private List<File> children = new ArrayList<>();
+
+
+    private Directory(Directory parent, String name) {
+        super(parent, name);
     }
 
-    public String createNewFolder(String folder){
-        return new String(folder);
+    static Directory createNewFolder(Directory parent){
+        return new Directory(parent, null);
     }
 
     public String renameFolder(String folder){
         return this.name = new String(folder);
     }
 
-    public void deleteFolder(){
-        this.folder = null;
-    }
 
     @Override
     public String toString() {
