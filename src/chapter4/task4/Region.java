@@ -6,13 +6,11 @@ import java.util.List;
 public class Region {
     private String regionName;
     private double area;
-    private String regionalCenter;
     List<District> districtList = new ArrayList<>();
 
-    public Region(String regionName, double area, String regionalCenter) {
+    public Region(String regionName, double area) {
         this.regionName = regionName;
         this.area = area;
-        this.regionalCenter = regionalCenter;
     }
 
     public Region() {
@@ -38,14 +36,6 @@ public class Region {
         this.area = area;
     }
 
-    public String getRegionalCenter() {
-        return regionalCenter;
-    }
-
-    public void setRegionalCenter(String regionalCenter) {
-        this.regionalCenter = regionalCenter;
-    }
-
     public List<District> getDistrictList() {
         return districtList;
     }
@@ -56,6 +46,6 @@ public class Region {
 
     @Override
     public String toString() {
-        return regionalCenter;
+        return regionName;
     }
 }

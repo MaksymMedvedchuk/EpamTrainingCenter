@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Page {
-    List<Photo> photoPage = new ArrayList<>(); //photoPage це ж в нас як одна сторінка альбому?
-    private static final int PAGE_PHOTO_QUANTITY = 2;
+    private List<Photo> photoPage = new ArrayList<>();
+    private static final int PAGE_PHOTO_CAPACITY = 2;
 
     public void addPhoto(Photo photo){
         photoPage.add(photo);
     }
 
     public boolean isPageFull(){
-        return photoPage.size() % PAGE_PHOTO_QUANTITY == 0;
+        return photoPage.size() == PAGE_PHOTO_CAPACITY;
     }
 
     public List<Photo> getPhotoList() {
@@ -22,5 +22,7 @@ public class Page {
     public void setPhotoList(List<Photo> photoList) {
         this.photoPage = photoList;
     }
+
+
 }
 

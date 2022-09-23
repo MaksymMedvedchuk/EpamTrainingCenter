@@ -16,9 +16,9 @@ public class Runner {
         lvivskiy.addCity(lviv);
         lutskiy.addCity(lutck);
 
-        Region kievska = new Region("Kievskaya", 50256.25, "Kyiv");
-        Region lvivska = new Region("Lvivska", 45692.48,"Lviv" );
-        Region lutska = new Region("Lutska", 35254.25, "Lutck");
+        Region kievska = new Region("Kievskaya", 50256.25);
+        Region lvivska = new Region("Lvivska", 45692.48);
+        Region lutska = new Region("Lutska", 35254.25);
         kievska.addDistrict(kievskiy);
         lvivska.addDistrict(lvivskiy);
         lutska.addDistrict(lutskiy);

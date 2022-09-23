@@ -4,24 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoAlbum {
-    private static final int PAGE_QUANTITY = 20;
-    List<Page> pageList = new ArrayList<>();
-    private Page page;
+    private static final int PAGE_QUANTITY = 2;
+    private List<Page> pageList = new ArrayList<>();
 
-    public void setPhotoNumber() {
-    }
-
-    public void completePhotoAlbum(Photo photo) throws FullAlbumException {
-        if (pageList.size() % PAGE_QUANTITY == 0) throw new FullAlbumException("The album is full");
-
+    public void supplementPhotoAlbum(Photo photo) {
+        if (pageList.size() == PAGE_QUANTITY && pageList.get(PAGE_QUANTITY - 1).isPageFull())
+            throw new FullAlbumException("The album is full");
+        if (pageList.isEmpty() || pageList.get(pageList.size() - 1).isPageFull()) {
+            pageList.add(new Page());
+        }
+        pageList.get(pageList.size() - 1).getPhotoList().add(photo);
     }
 
     public void printPhotoQuantity() {
+        int photoQuantity = 0;
         for (Page page : pageList) {
-            System.out.println(page.getPhotoList());
+            photoQuantity += page.getPhotoList().size();
         }
+        System.out.println(photoQuantity);
     }
-    
+
     public List<Page> getPageList() {
         return pageList;
     }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Country {
+    private final List<Region> regionList = new ArrayList<>();
     private String countryName;
-    List<Region> regionList = new ArrayList<>();
 
     public Country(String countryName) {
         this.countryName = countryName;
@@ -19,11 +19,13 @@ public class Country {
         for (Region region : regionList) {
             for (District district : region.getDistrictList()) {
                 for (City city : district.getCityList()) {
-                    if (city.isCapital()) System.out.println(city);
+                    if (city.isCapital()) {
+                        System.out.println(city);
                     }
                 }
             }
         }
+    }
 
     public void printRegionsQuantity() {
         System.out.println(regionList.size());
@@ -39,7 +41,11 @@ public class Country {
 
     public void printRegionCentres() {
         for (Region region : regionList) {
-            System.out.println(region.getRegionalCenter() + " ");
+            for (District district : region.getDistrictList()) {
+                for (City city : district.getCityList()) {
+                    if (city.isRegionCentre()) System.out.println(city);
+                }
+            }
         }
     }
 }
