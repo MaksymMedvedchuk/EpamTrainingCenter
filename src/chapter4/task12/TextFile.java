@@ -3,7 +3,6 @@ package chapter4.task12;
 public class TextFile extends File {
     private String content;
 
-
     public TextFile(String name, String content,  Directory parent) {
         super(parent, name);
         this.content = content;
@@ -21,19 +20,9 @@ public class TextFile extends File {
         content += " " + input;
     }
 
-    public void removeFile(){
-        super.name = null;
-        this.content = null;
-    }
-
-    @Override
-    public String toString() {
-        return name + "\n" + content;
-    }
-
     @Override
     void printInfo() {
-        System.out.println(this);
+        System.out.println(parent.printPathFile() + "\n" + name + "\n" + content);
     }
 }
 
