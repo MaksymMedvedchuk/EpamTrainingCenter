@@ -17,7 +17,7 @@ public class Runner {
                 "3234456936211484", "12361478521236");
         Customer secondCustomer = new Customer(67891, "Vasilik", "Vasil", "Plygna 1",
                 "3654789625683698", "12178914785234");
-        Customer thirdCustomer = new Customer(69547, "Artemii", "Artem", "Lihotnya 3",
+        Customer thirdCustomer = new Customer(69547, "Artemii", "Maksim", "Lihotnya 3",
                 "3698745632145694", "258963231456");
 
         CUSTOMER_REPOSITORY.addCustomer(firstCustomer);
