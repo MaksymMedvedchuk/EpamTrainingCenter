@@ -5,22 +5,24 @@ import chapter4.variantb.task4.vegetables.Cucumber;
 import chapter4.variantb.task4.vegetables.Onion;
 import chapter4.variantb.task4.vegetables.Tomato;
 
+import java.math.BigDecimal;
+
 public class Runner {
     public static void main(String[] args) {
-        Cabbage cabbage = Cabbage.createCabbage(10, "Green");
-        Tomato tomato = new Tomato(5, "Red");
-        Onion onion = new Onion(11, "White");
-        Cucumber cucumber = new Cucumber(8, "Green");
-        Chef chef = new Chef();
-        chef.addVegetables(cabbage);
-        chef.addVegetables(tomato);
-        chef.addVegetables(onion);
-        chef.addVegetables(cucumber);
-        System.out.println("Calorie of salad: " + chef.getCalorieCount());
-        System.out.println(chef.getVegetablesCalorie());
+        Cabbage cabbage = Cabbage.createCabbage(10, BigDecimal.valueOf(0.5));
+        Tomato tomato = new Tomato(5, BigDecimal.valueOf(0.3));
+        Onion onion = new Onion(11, BigDecimal.valueOf(0.7));
+        Cucumber cucumber = new Cucumber(8, BigDecimal.valueOf(0.8));
+        Salad salad = new Salad();
+        salad.addVegetable(cabbage);
+        salad.addVegetable(tomato);
+        salad.addVegetable(onion);
+        salad.addVegetable(cucumber);
+        System.out.println("Calorie of salad: " + salad.getCalorieCount());
+        System.out.println(salad.getVegetablesSortByCalorie());
         System.out.println();
-        System.out.println(chef.sortVegetablesCalorie());
+        System.out.println(salad.getVegetablesSortBySalt());
         System.out.println();
-        System.out.println(chef.findVegetablesCalorieContent());
+        System.out.println(salad.getVegetablesCalorieContent(9,15));
     }
 }

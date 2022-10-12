@@ -1,11 +1,13 @@
 package chapter4.variantb.task2.sweets;
 
-public abstract class Sweets {
-    protected String name;
-    protected double weight;
-    protected double sugarContent;
+import java.math.BigDecimal;
 
-    public Sweets(String name, double weight, double sugarContent) {
+public abstract class Sweet {
+    protected String name;
+    protected BigDecimal weight;
+    protected BigDecimal sugarContent;
+
+    public Sweet(String name, BigDecimal weight, BigDecimal sugarContent) {
         this.name = name;
         this.weight = weight;
         this.sugarContent = sugarContent;
@@ -28,19 +30,19 @@ public abstract class Sweets {
         this.name = name;
     }
 
-    public double getWeight() {
+    public BigDecimal getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(BigDecimal weight) {
         this.weight = weight;
     }
 
-    public double getSugarContent() {
+    public BigDecimal getSugarContent() {
         return sugarContent;
     }
 
-    public void setSugarContent(double sugarContent) {
+    public void setSugarContent(BigDecimal sugarContent) {
         this.sugarContent = sugarContent;
     }
 }

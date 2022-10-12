@@ -1,14 +1,14 @@
 package chapter4.variantb.task4.vegetables;
 
-import chapter4.variantb.task4.vegetables.Vegetables;
+import java.math.BigDecimal;
 
-public class Onion extends Vegetables {
-    public Onion(int calorie, String color) {
-        super(calorie, color);
+public class Onion extends Vegetable {
+    public Onion(int calorie, BigDecimal saltContent) {
+        super(calorie, saltContent);
     }
 
     @Override
-    public int compareTo(Vegetables o) {
-        return color.compareTo(o.color);
+    public int compareTo(Vegetable o) {
+        return saltContent.compareTo(o.saltContent);
     }
 }

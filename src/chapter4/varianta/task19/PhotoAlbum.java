@@ -8,12 +8,17 @@ public class PhotoAlbum {
     private List<Page> pageList = new ArrayList<>();
 
     public void supplementPhotoAlbum(Photo photo) {
-        if (pageList.size() == PAGE_QUANTITY && pageList.get(PAGE_QUANTITY - 1).isPageFull())
-            throw new FullAlbumException("The album is full");
-        if (pageList.isEmpty() || pageList.get(pageList.size() - 1).isPageFull()) {
-            pageList.add(new Page());
-        }
+        if (isAlbumFull()) throw new FullAlbumException("The album is full");
+        if (isNewPageNeeded()) pageList.add(new Page());
         pageList.get(pageList.size() - 1).getPhotoList().add(photo);
+    }
+
+    private boolean isNewPageNeeded() {
+        return pageList.isEmpty() || pageList.get(pageList.size() - 1).isPageFull();
+    }
+
+    private boolean isAlbumFull() {
+        return pageList.size() == PAGE_QUANTITY && pageList.get(PAGE_QUANTITY - 1).isPageFull();
     }
 
     public void printPhotoQuantity() {

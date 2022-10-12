@@ -1,8 +1,10 @@
 package chapter4.variantb.task2.sweets;
 
-public class Candy extends Sweets {
+import java.math.BigDecimal;
 
-    public Candy(String name, double weight, double sugarContent) {
+public class Candy extends Sweet {
+
+    public Candy(String name, BigDecimal weight, BigDecimal sugarContent) {
         super(name, weight, sugarContent);
     }
 
