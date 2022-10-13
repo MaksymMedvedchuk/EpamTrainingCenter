@@ -1,36 +1,18 @@
 package test;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
-import java.io.File;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.stream.Collectors;
+import java.util.StringTokenizer;
 
 public class TestRunner {
     public static void main(String[] args) {
-        BigDecimal b1 = new BigDecimal(10);
-        BigDecimal b2 = new BigDecimal(20);
-        System.out.println(b1.compareTo(b2) < -1);
-
-
-
-
-
-
-
-
-
+    String string = "live in a house near the mountains. I have two brothers and one sister, and I was born last. " +
+            "\tMy father teaches mathematics, and my mother is a nurse at a big hospital. \tMy brothers are very smart and work hard in school.";
+        StringTokenizer stringTokenizer = new StringTokenizer(string, "\t");
+        while (stringTokenizer.hasMoreElements()) System.out.println(stringTokenizer.nextToken());
 
 
 
 
     }
-
-
 }
 
 

@@ -24,7 +24,7 @@ public class NewYearGift {
         System.out.println(this + "\n" + "New Year Gift weight: " + giftWeight);
     }
 
-    public List<Candy> getCandiesSortByWeight() {
+    public List<Candy> getCandiesSortedByWeight() {
         List<Candy> candyList = new ArrayList<>();
         for (Sweet sweet : sweetList) {
             if (sweet instanceof Candy) {//являється змінна sweets обєктом класу Candy?
@@ -34,7 +34,7 @@ public class NewYearGift {
         return candyList.stream().sorted(Comparator.comparing(Candy::getWeight)).collect(Collectors.toList());
     }
 
-    public List<Candy> getCandyByBetween(BigDecimal min, BigDecimal max) {
+    public List<Candy> getCandyBySugarBetween(BigDecimal min, BigDecimal max) {
         if (min.compareTo(max) > 0){
             BigDecimal temp = min;
             min = max;

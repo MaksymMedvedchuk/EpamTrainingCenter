@@ -23,6 +23,6 @@ public class Runner {
         System.out.println();
         System.out.println(salad.getVegetablesSortBySalt());
         System.out.println();
-        System.out.println(salad.getVegetablesCalorieContent(9,15));
+        System.out.println(salad.getVegetablesCalorieBetween(9,15));
     }
 }

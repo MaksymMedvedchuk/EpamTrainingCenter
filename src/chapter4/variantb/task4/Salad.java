@@ -36,7 +36,7 @@ public class Salad {
                 .collect(Collectors.toList());
     }
 
-    public List<Vegetable> getVegetablesCalorieContent(int min, int max) {
+    public List<Vegetable> getVegetablesCalorieBetween(int min, int max) {
         List<Vegetable> list = new ArrayList<>();
         for (Vegetable vegetable : vegetableList) {
             if (min > max) throw new IntervalIncorrectException("Incorrect interval");

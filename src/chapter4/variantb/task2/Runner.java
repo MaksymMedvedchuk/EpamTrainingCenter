@@ -17,8 +17,8 @@ public class Runner {
         newYearGift.addSweet(chocolate);
         newYearGift.printGiftWeight();
         System.out.println();
-        System.out.println(newYearGift.getCandiesSortByWeight());
+        System.out.println(newYearGift.getCandiesSortedByWeight());
         System.out.println();
-        System.out.println(newYearGift.getCandyByBetween(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.6)));
+        System.out.println(newYearGift.getCandyBySugarBetween(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.6)));
     }
 }
