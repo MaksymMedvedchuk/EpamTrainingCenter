@@ -70,17 +70,17 @@ public class Sentence {
         System.out.println(builder);
     }
 
-    public void printInfo() {
-        List<SentencePart> list = new ArrayList<>();
-        for (SentencePart sentencePart : sentencePartList) {
-            list.add(sentencePart);
+//    public void printInfo() {
+//        List<SentencePart> list = new ArrayList<>();
+//        for (SentencePart sentencePart : sentencePartList) {
+//            list.add(sentencePart);
 
 //            int length = sentencePartList.size();
 //            for (int i = length - 1; i > 0; i--) {
 //                for (int j = 1; j < length; j++) {
         }
-    }
-}
+    
+
 
 
 
