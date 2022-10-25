@@ -1,13 +1,13 @@
 package chapter6.task2;
 
-public abstract class StudentImpl implements IEntrant {
+public abstract class Student implements Entrant {
     private final String name;
     private final String surname;
     private final int age;
     private final double mathGrade;
     private final double englishGrade;
 
-    public StudentImpl(String name, String surname, int age, double mathGrade, double englishGrade) {
+    public Student(String name, String surname, int age, double mathGrade, double englishGrade) {
         this.name = name;
         this.surname = surname;
         this.age = age;

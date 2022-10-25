@@ -1,6 +1,6 @@
 package chapter6.task2;
 
-public class AbsenteeStudent extends StudentImpl {
+public class AbsenteeStudent extends Student {
 
     public AbsenteeStudent(String name, String surname, int age, double mathGrade, double englishGrade) {
         super(name, surname, age, mathGrade, englishGrade);

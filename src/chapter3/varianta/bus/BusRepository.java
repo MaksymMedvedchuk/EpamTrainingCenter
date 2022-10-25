@@ -14,12 +14,12 @@ public class BusRepository {
         busList.add(bus);
     }
 
-    public List<Bus> findByRouteNumber(String roudNumber) {
+    public List<Bus> findByRouteNumber(String roundNumber) {
         List<Bus> list = new ArrayList<>();
         Iterator<Bus> iterator = busList.iterator();  //Iterator працює з Bus, iterator перебирає нашу колекцію
         while (iterator.hasNext()) { //якщо є послідуючий елемент
             Bus bus = iterator.next();//bus присвоюємо цей елемент
-            if (bus.getRouteNumber().equals(roudNumber)) {
+            if (bus.getRouteNumber().equals(roundNumber)) {
                 list.add(bus);
             }
         }
