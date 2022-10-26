@@ -9,7 +9,7 @@ public abstract class SentencePart {
         this.content = content;
     }
 
-    public static SentencePart getSentencePart(String input) {
+    public static SentencePart parseSentencePart(String input) {
         if (Pattern.matches("\\p{Punct}", input)) return new Punctuation(input);
         else return new Word(input);
     }

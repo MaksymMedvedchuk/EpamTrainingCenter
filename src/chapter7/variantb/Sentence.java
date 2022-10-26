@@ -6,13 +6,10 @@ import java.util.StringTokenizer;
 
 public class Sentence {
 
-    private static final String WORD_LENGTH = "\\b\\w{4,4}\\b";
-    private static final String VOWEL_LETTERS = "^[aieouAIEOU].*";
+    private static final String WORD_BEGINS_CONSONANT_LETTER = "^[aieouAIEOU].*";
 
     private final List<SentencePart> sentencePartList = new ArrayList<>();
 
-    public Sentence() {
-    }
 
     public Sentence(String sentence) {
         parseSentence(sentence);
@@ -23,7 +20,7 @@ public class Sentence {
         while (sentencePartTokenizer.hasMoreElements()) {
             String sentencePartStr = sentencePartTokenizer.nextToken();
             if (sentencePartStr.equals(" ")) continue;
-            SentencePart sentencePart = SentencePart.getSentencePart(sentencePartStr);
+            SentencePart sentencePart = SentencePart.parseSentencePart(sentencePartStr);
             addSentencePart(sentencePart);
         }
     }
@@ -49,37 +46,29 @@ public class Sentence {
         return new ArrayList<>(sentencePartList);
     }
 
-    public void isWordOfGivenLengthAndBeginsVowel() {
-        List<SentencePart> list = new ArrayList<>();
+    public void removeWordsOfGivenLengthAndBeginsVowel(int length) {
+        sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length
+                && !sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER));//removeIf приймає Predicate в якого один аргумент
+        // і якщо для нього(sentencePart) умова true то він його вертає(видаляє в нашому випадку
+        //System.out.println(this);//якщо this то це ссилка на поточний обєкт. Як це можна записати по іншому
+    }
+
+    public int getWordCount() {
+        return (int) sentencePartList.stream().filter(sentencePart -> sentencePart instanceof Word).count();
+    }
+
+    public void swapFirstAndLastWord() {
         for (SentencePart sentencePart : sentencePartList) {
-            if (!sentencePart.toString().matches(WORD_LENGTH) || !sentencePart.content.matches(VOWEL_LETTERS)) //чому тут || та чому sentencePart викликаємо toString?
-                list.add(sentencePart);
+            if (sentencePart instanceof Word){
+
+
+
+
+
+            }
         }
-        printText(list);
     }
-
-    private void printText(List<SentencePart> list) {
-        StringBuilder builder = new StringBuilder();
-        for (SentencePart sentencePart : list) {
-            if ((sentencePart instanceof Word) && (list.indexOf(sentencePart) != 0))
-                builder.append(Delimiter.SENTENCE_PART_SPACE.getDelimiter());
-            builder.append(sentencePart);
-            if (sentencePart.equals(list.get(list.size() - 1)))
-                builder.append(Delimiter.SENTENCE_PART_DOT.getDelimiter());
-        }
-        System.out.println(builder);
-    }
-
-//    public void printInfo() {
-//        List<SentencePart> list = new ArrayList<>();
-//        for (SentencePart sentencePart : sentencePartList) {
-//            list.add(sentencePart);
-
-//            int length = sentencePartList.size();
-//            for (int i = length - 1; i > 0; i--) {
-//                for (int j = 1; j < length; j++) {
-        }
-    
+}
 
 
 
