@@ -2,7 +2,7 @@ package chapter7.variantb;
 
 public class Runner {
     public static void main(String[] args) {
-//        String input = "I, am studying the program it is JAVA.";
+ //      String input = "I am studying the program it is JAVA";
         String input = "\tThe string the tokenizer class allows an to application to break a string into tokens." +
                 "The tokenization method is much simpler than the one used by the StreamTokenizer class. " +
                 "\tThe StringTokenizer methods do not distinguish among identifiers, numbers, and quoted strings, nor do they recognize and skip comments." +
@@ -13,10 +13,20 @@ public class Runner {
         text.hashCode();
         System.out.println(text);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        text.removeWordsOfGivenLengthAndBeginsVowel(6);
+//        text.removeWordsOfGivenLengthAndBeginsVowel(6);
+//        System.out.println(text);
+//        Text text1 = Text.parseText(input);
+//        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+//        text1.printSentencesOrderIncreasingWords();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.swapFirstAndLastSentenceWords();
         System.out.println(text);
-        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        text.printSentencesOrderIncreasingWords();
-        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+
+
+
+
+
     }
+
 }

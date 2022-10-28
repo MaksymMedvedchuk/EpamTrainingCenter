@@ -1,13 +1,21 @@
 package test;
 
 import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+
+import static java.util.Collections.*;
 
 public class TestRunner {
     public static void main(String[] args) {
-                String testString = "I, am studying the program it is JAVA. So, I want to be a programmer! It is: challenging for me.";
+        String s = "Hello by poka";
+        LinkedList<String> list = new LinkedList<>();
+        list.add("Hello");
+        list.add("By");
+        list.add("Idi");
+        list.set(0, list.get(list.size() - 1));
+        System.out.println(list);
+
+
 
 
 

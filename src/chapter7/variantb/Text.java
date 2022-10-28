@@ -33,14 +33,18 @@ public class Text {
     public void printSentencesOrderIncreasingWords() {
         List<Sentence> sentenceList = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
-            for (Sentence sentence : paragraph.getSentenceList()) {
-                sentenceList.add(sentence);
-            }
+            sentenceList.addAll(paragraph.getSentenceList());
         }
         sentenceList.sort(Comparator.comparing(Sentence::getWordCount));
         sentenceList.forEach(System.out::println);
     }
-    
+
+    public void swapFirstAndLastSentenceWords() {
+        for (Paragraph paragraph : paragraphList) {
+            paragraph.swapFirstAndLastWord();
+                }
+            }
+
     @Override
     public String toString() {
         return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));

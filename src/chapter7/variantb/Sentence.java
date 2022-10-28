@@ -43,32 +43,50 @@ public class Sentence {
     }
 
     public List<SentencePart> getSentencePartList() {
-        return new ArrayList<>(sentencePartList);
+        return sentencePartList;
     }
 
     public void removeWordsOfGivenLengthAndBeginsVowel(int length) {
         sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length
-                && !sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER));//removeIf приймає Predicate в якого один аргумент
-        // і якщо для нього(sentencePart) умова true то він його вертає(видаляє в нашому випадку
-        //System.out.println(this);//якщо this то це ссилка на поточний обєкт. Як це можна записати по іншому
+                && !sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER));
     }
 
     public int getWordCount() {
-        return (int) sentencePartList.stream().filter(sentencePart -> sentencePart instanceof Word).count();
+        return (int) sentencePartList.stream().filter(sentencePart -> sentencePart instanceof Word).count();//кастинг це нормально?
     }
 
-    public void swapFirstAndLastWord() {
-        for (SentencePart sentencePart : sentencePartList) {
-            if (sentencePart instanceof Word){
+    public SentencePart getFirstWord() {
+        return sentencePartList.get(0);
+    }
 
-
-
-
-
-            }
-        }
+    public SentencePart getLastWord() {
+        return sentencePartList.get(sentencePartList.size() - 1);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

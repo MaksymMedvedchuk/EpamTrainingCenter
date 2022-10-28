@@ -1,6 +1,9 @@
 package chapter7.variantb;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
 public class Paragraph {
@@ -32,28 +35,44 @@ public class Paragraph {
     public List<Sentence> getSentenceList() {
         return new ArrayList<>(sentenceList);
     }
-}
-
-//    public void print() {
-//        List<Sentence> list = new ArrayList<>(sentenceList);
-//        list.stream().map(Objects::toString).sorted().forEach(System.out::println);
-//        }
-//    }
 
 
-//        for (Sentence sentence : sentenceList) {
-//            Collections.sort(sentence.toString().length());
-//
-//        }
-//        List<Sentence> list = new ArrayList<>();
-//        for (Sentence sentence : sentenceList) {
-//            list.add(sentence);
-//          list.sort(new Sentence.);
-//            System.out.println(list);
-//
-//        }
-//        Comparator<Sentence> comparator = Comparator.comparingInt(a -> a.toString().length());
-//        sentenceList.stream().sorted(comparator).forEach(System.out::println);
+    public void swapFirstAndLastWord() {
+        for(Sentence sentence :sentenceList){
+                SentencePart first = sentence.getFirstWord();
+                SentencePart last = sentence.getLastWord();
+                sentence.getSentencePartList().set(0, last);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
