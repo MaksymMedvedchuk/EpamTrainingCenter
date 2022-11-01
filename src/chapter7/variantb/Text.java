@@ -45,15 +45,6 @@ public class Text {
         }
     }
 
-    @Override
-    public String toString() {
-        return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));
-    }
-
-    public List<Paragraph> getParagraphList() {
-        return new ArrayList<>(paragraphList);
-    }
-
     public void printWordsAlphabeticalOrderByFirstLetter() {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
@@ -65,22 +56,29 @@ public class Text {
             }
         }
         list.sort(Comparator.comparing(SentencePart::toString));
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(i);
+        for (SentencePart sentencePart : list) {
+            System.out.print(sentencePart + " ");
         }
     }
-//    public void sortWordsAlphabeticalOrderByFirstLetter(){
-//        List<Sentence> list = new ArrayList<>();
-//        for (Paragraph paragraph : paragraphList) {
-//            for (Sentence sentence : paragraph.getSentenceList()) {
-//                for (SentencePart sentencePart : sentence.getSentencePartList()) {
-//                    if (sentencePart.toString().matches())
-//                }
-//            }
-//
-//
-//    }
+
+    public void sortWordsAlphabeticalOrderByFirstLetter() {
+        List<Sentence> list = new ArrayList<>();
+        for (Paragraph paragraph : paragraphList) {
+        }
+    }
+
+    @Override
+    public String toString() {
+        return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));
+    }
+
+    public List<Paragraph> getParagraphList() {
+        return new ArrayList<>(paragraphList);
+    }
 }
+
+
+
 
 
 

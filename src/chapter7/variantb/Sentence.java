@@ -1,17 +1,14 @@
 package chapter7.variantb;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.stream.Collectors;
 
 public class Sentence {
 
     private static final String WORD_BEGINS_CONSONANT_LETTER = "^[aieouAIEOU].*";
 
     private final List<SentencePart> sentencePartList = new ArrayList<>();
-
 
     public Sentence(String sentence) {
         parseSentence(sentence);
@@ -65,19 +62,26 @@ public class Sentence {
         return sentencePartList.get(sentencePartList.size() - 1);
     }
 
-    public void getWordWithVowel(){
-        List<SentencePart> toSort = new ArrayList<>();
+    public List<SentencePart> getWordsListWithBeginVowel() {
+        List<SentencePart> list = new ArrayList<>();
         for (SentencePart sentencePart : sentencePartList) {
+            sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
             if (sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER) && sentencePart instanceof Word) {
-                toSort.add(sentencePart);
+                list.add(sentencePart);
             }
         }
-        toSort.sort(Comparator.comparing(SentencePart::toString));
-        for (SentencePart sentencePart : toSort) {
-            System.out.print(sentencePart + " ");
-        }
+        return list;
+//        list.sort(Comparator.comparing(SentencePart::toString));
+//        for (SentencePart sentencePart : list) {
+//            System.out.print(sentencePart + " ");
+//        }
     }
 }
+
+
+
+
+
 
 
 

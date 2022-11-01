@@ -24,6 +24,13 @@ public class Paragraph {
         sentenceList.add(sentence);
     }
 
+    public void swapFirstAndLastWord() {
+        for (Sentence sentence : sentenceList) {
+            Collections.swap(sentence.getSentencePartList(), sentence.getSentencePartList().indexOf(sentence.getFirstWord()),
+                    sentence.getSentencePartList().indexOf(sentence.getLastWord()));
+        }
+    }
+
     @Override
     public String toString() {
         return sentenceList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.SENTENCE_PART_SPACE.getDelimiter()));
@@ -32,14 +39,7 @@ public class Paragraph {
     public List<Sentence> getSentenceList() {
         return new ArrayList<>(sentenceList);
     }
-
-    public void swapFirstAndLastWord() {
-        for (Sentence sentence : sentenceList) {
-                Collections.swap(sentence.getSentencePartList(), sentence.getSentencePartList().indexOf(sentence.getFirstWord()),
-                        sentence.getSentencePartList().indexOf(sentence.getLastWord()));
-            }
-        }
-    }
+}
 
 
 
