@@ -42,8 +42,8 @@ public class Text {
     public void swapFirstAndLastSentenceWords() {
         for (Paragraph paragraph : paragraphList) {
             paragraph.swapFirstAndLastWord();
-                }
-            }
+        }
+    }
 
     @Override
     public String toString() {
@@ -53,4 +53,42 @@ public class Text {
     public List<Paragraph> getParagraphList() {
         return new ArrayList<>(paragraphList);
     }
+
+    public void printWordsAlphabeticalOrderByFirstLetter() {
+        List<SentencePart> list = new ArrayList<>();
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+                    if (sentencePart instanceof Word)
+                        list.add(SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()));
+                }
+            }
+        }
+        list.sort(Comparator.comparing(SentencePart::toString));
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(i);
+        }
+    }
+//    public void sortWordsAlphabeticalOrderByFirstLetter(){
+//        List<Sentence> list = new ArrayList<>();
+//        for (Paragraph paragraph : paragraphList) {
+//            for (Sentence sentence : paragraph.getSentenceList()) {
+//                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+//                    if (sentencePart.toString().matches())
+//                }
+//            }
+//
+//
+//    }
 }
+
+
+
+
+
+
+
+
+
+
+

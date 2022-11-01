@@ -1,8 +1,10 @@
 package chapter7.variantb;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class Sentence {
 
@@ -62,7 +64,25 @@ public class Sentence {
     public SentencePart getLastWord() {
         return sentencePartList.get(sentencePartList.size() - 1);
     }
+
+    public void getWordWithVowel(){
+        List<SentencePart> toSort = new ArrayList<>();
+        for (SentencePart sentencePart : sentencePartList) {
+            if (sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER) && sentencePart instanceof Word) {
+                toSort.add(sentencePart);
+            }
+        }
+        toSort.sort(Comparator.comparing(SentencePart::toString));
+        for (SentencePart sentencePart : toSort) {
+            System.out.print(sentencePart + " ");
+        }
+    }
 }
+
+
+
+
+
 
 
 

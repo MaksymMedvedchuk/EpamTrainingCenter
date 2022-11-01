@@ -1,9 +1,6 @@
 package chapter7.variantb;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Paragraph {
@@ -36,12 +33,10 @@ public class Paragraph {
         return new ArrayList<>(sentenceList);
     }
 
-
     public void swapFirstAndLastWord() {
-        for(Sentence sentence :sentenceList){
-                SentencePart first = sentence.getFirstWord();
-                SentencePart last = sentence.getLastWord();
-                sentence.getSentencePartList().set(0, last);
+        for (Sentence sentence : sentenceList) {
+                Collections.swap(sentence.getSentencePartList(), sentence.getSentencePartList().indexOf(sentence.getFirstWord()),
+                        sentence.getSentencePartList().indexOf(sentence.getLastWord()));
             }
         }
     }
