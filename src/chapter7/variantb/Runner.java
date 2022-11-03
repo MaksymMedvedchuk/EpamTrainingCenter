@@ -2,7 +2,7 @@ package chapter7.variantb;
 
 public class Runner {
     public static void main(String[] args) {
-        //            String input = "I am studying. The program it os JAVA";
+//        String input = "I am stuidying. The program niti os JAVA";
         String input = "\tThe, string the tokenizer class allows an to application to break a string into tokens." +
                 "The tokenization method is much simpler than the one used by the StreamTokenizer class. " +
                 "\tThe StringTokenizer methods do not distinguish among identifiers, numbers, and quoted strings, nor do they recognize and skip comments." +
@@ -15,7 +15,7 @@ public class Runner {
 //        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 //        text.removeWordsOfGivenLengthAndBeginsVowel(6);//
 //        System.out.println(text);
-//        Text text1 = Text.parseText(input);
+        //       Text text1 = Text.parseText(input);
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 //        text1.printSentencesOrderIncreasingWords();
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -24,8 +24,11 @@ public class Runner {
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 //        text.printWordsAlphabeticalOrderByFirstLetter();
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        text.sortWordsAlphabeticalOrderByFirstLetter();
-        Sentence sentence = new Sentence(input);
-        System.out.println(sentence.getWordsListWithBeginVowel());
+//        text.sortWordsAlphabeticalOrderByFirstLetter();
+        //       Sentence sentence = new Sentence(input);
+        //       System.out.println(sentence.get("i"));
+//        System.out.println(sentence.getWordsListWithBeginVowel());
+        text.print("i");
+
     }
 }

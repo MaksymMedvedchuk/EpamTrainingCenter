@@ -1,12 +1,16 @@
 package chapter7.variantb;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class Sentence {
 
-    private static final String WORD_BEGINS_CONSONANT_LETTER = "^[aieouAIEOU].*";
+
+
+    private static final String WORD_BEGINS_VOWEL_LETTER = "^[aieouAIEOU].*";
 
     private final List<SentencePart> sentencePartList = new ArrayList<>();
 
@@ -32,7 +36,7 @@ public class Sentence {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (SentencePart sentencePart : sentencePartList) {
-            if ((sentencePart instanceof Word) && (sentencePartList.indexOf(sentencePart) != 0))
+            if ((sentencePart instanceof Word) && (sentencePartList.indexOf(sentencePart) != 0))//якщо не нульовий то ми апендимо пробіл?
                 builder.append(Delimiter.SENTENCE_PART_SPACE.getDelimiter());
             builder.append(sentencePart);
             if (sentencePart.equals(sentencePartList.get(sentencePartList.size() - 1)))
@@ -47,11 +51,17 @@ public class Sentence {
 
     public void removeWordsOfGivenLengthAndBeginsVowel(int length) {
         sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length
-                && !sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER));
+                && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
     }
 
     public int getWordCount() {
-        return (int) sentencePartList.stream().filter(sentencePart -> sentencePart instanceof Word).count();//кастинг це нормально?
+        long count = 0L;
+        for (SentencePart sentencePart : sentencePartList) {
+            if (sentencePart instanceof Word) {
+                count++;
+            }
+        }
+        return (int) count;
     }
 
     public SentencePart getFirstWord() {
@@ -65,18 +75,29 @@ public class Sentence {
     public List<SentencePart> getWordsListWithBeginVowel() {
         List<SentencePart> list = new ArrayList<>();
         for (SentencePart sentencePart : sentencePartList) {
-            sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-            if (sentencePart.toString().matches(WORD_BEGINS_CONSONANT_LETTER) && sentencePart instanceof Word) {
-                list.add(sentencePart);
+            SentencePart part = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
+            if (part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word) {
+                list.add(part);
             }
         }
+        list.sort(Comparator.comparing(SentencePart::toString));
         return list;
-//        list.sort(Comparator.comparing(SentencePart::toString));
-//        for (SentencePart sentencePart : list) {
-//            System.out.print(sentencePart + " ");
-//        }
     }
+
+//    public List<SentencePart> getWithI(String input){
+//        List<SentencePart> list = new ArrayList<>();
+//        for (SentencePart sentencePart : sentencePartList) {
+//            if (sentencePart.toString().contains(input)) list.add(sentencePart);
+//        }
+//        return list;
+//    }
+
+   
+
+
+
 }
+
 
 
 

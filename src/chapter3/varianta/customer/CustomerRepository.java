@@ -24,12 +24,12 @@ public class CustomerRepository {
     }
 
     public List<Customer> findByNameSurnameOrder() {
-        //       Перша реалізація через створення класу, який імплементить Comparator
-//        List<Customer> list = new ArrayList<>(customerList);
-//        list.sort(new Customer.Comparator());
-//        return list;
+//              Перша реалізація через створення класу, який імплементить Comparator
+        List<Customer> list = new ArrayList<>(customerList);
+        list.sort(new Customer.Comparator());
+        return list;
 //        Друга реалізація через інтерфейс Comparable
-        return customerList.stream().sorted().collect(Collectors.toList());
+//        return customerList.stream().sorted().collect(Collectors.toList());
 //        Третя через метод sort з використанням Comparator
 //        List<Customer> list = new ArrayList<>(customerList);
 //        list.sort(Comparator.comparing(Customer::getName).

@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class Text {
 
+    private static final String WORD_BEGINS_VOWEL_LETTER = "^[aieouAIEOU].*";
+
     private final List<Paragraph> paragraphList = new ArrayList<>();
 
     public static Text parseText(String textStr) {
@@ -55,17 +57,57 @@ public class Text {
                 }
             }
         }
-        list.sort(Comparator.comparing(SentencePart::toString));
-        for (SentencePart sentencePart : list) {
-            System.out.print(sentencePart + " ");
+        getSort(list);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            if (isEqualFirstLetters(list, i))
+                stringBuilder.append(list.get(i)).append(Delimiter.SENTENCE_PART_SPACE.getDelimiter());
+            else stringBuilder.append(list.get(i - 1)).append(Delimiter.PARAGRAPH_DELIMITER.getDelimiter());
         }
+        System.out.println(stringBuilder);
     }
 
-    public void sortWordsAlphabeticalOrderByFirstLetter() {
-        List<Sentence> list = new ArrayList<>();
-        for (Paragraph paragraph : paragraphList) {
-        }
+    private boolean isEqualFirstLetters(List<SentencePart> list, int i) {//не повинен буду статік?
+        return i == 0 || list.get(i - 1).toString().charAt(0) == list.get(i).toString().charAt(0);
     }
+
+    private void getSort(List<SentencePart> list) {
+        list.sort(Comparator.comparing(SentencePart::toString));
+    }
+
+    public void print(String input) {
+        List<SentencePart> list = new ArrayList<>();
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+                    sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
+                        if (sentencePart.toString().contains(input)) {
+                            list.add(sentencePart);
+                        }
+
+                    }
+                }
+            }
+        list.sort(new WordComparatorByLetter(input));
+        //list.forEach(System.out::println);
+        }
+
+    public void sortWordsAlphabeticalOrderByFirstLetter() {
+        List<SentencePart> list = new ArrayList<>();
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+                    sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
+                    if (sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER) && sentencePart instanceof Word) {
+                        list.add(sentencePart);
+                    }
+                }
+            }
+
+        }
+        list.sort(Comparator.comparing(SentencePart::toString));
+    }
+
 
     @Override
     public String toString() {
@@ -75,7 +117,10 @@ public class Text {
     public List<Paragraph> getParagraphList() {
         return new ArrayList<>(paragraphList);
     }
-}
+
+   }
+
+
 
 
 
