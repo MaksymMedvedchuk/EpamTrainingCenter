@@ -100,32 +100,15 @@ public class Text {
         list.forEach(System.out::println);
     }
 
-    public void checkWordForPalindrome(String string){
+    public void checkWordForPalindrome() {
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
-                for (SentencePart sentencePart : sentence.getSentencePartList()) {
-                   if (sentencePart instanceof Word && isPalindrome(string))
-                    System.out.println(sentencePart);
-
-                    }
+                sentence.checkLongestPalindromeSubstring();
                 }
             }
         }
 
 
-    public boolean isPalindrome(String text) {
-        String clean = text.replaceAll("\\s+", "").toLowerCase();
-        int length = clean.length();
-        int forward = 0;
-        int backward = length - 1;
-        while (backward > forward) {
-            char forwardChar = clean.charAt(forward++);
-            char backwardChar = clean.charAt(backward--);
-            if (forwardChar != backwardChar)
-                return false;
-        }
-        return true;
-    }
 
     @Override
     public String toString() {

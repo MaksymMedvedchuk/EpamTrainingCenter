@@ -1,38 +1,32 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test {
-    private String name;
-    private int id;
 
-    public Test(String name, int id) {
-        this.name = name;
-        this.id = id;
+    static void printSubStr(String str, int low, int high) {
+        for (int i = low; i <= high; ++i)
+            System.out.print(str.charAt(i));
     }
 
-    public String getName() {
-        return name;
-    }
+    static void checkLongestPalindromeSubstring(String str) {
+        int maxLength = 1, start = 0;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i; j < str.length(); j++) {
+                int flag = 1;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+                for (int k = 0; k < (j - i + 1) / 2; k++)
+                    if (str.charAt(i + k) != str.charAt(j - k))
+                        flag = 0;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + " " +  "ID: " + id;
+                if (flag != 0 && (j - i + 1) > maxLength) {
+                    start = i;
+                    maxLength = j - i + 1;
+                }
+            }
+        }
+        printSubStr(str, start, start + maxLength - 1);
     }
 }
+
 
 
 
