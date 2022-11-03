@@ -92,14 +92,17 @@ public class Text {
     }
 
     public void sortWordsAlphabeticalOrderByFirstLetter() {
-        List<Sentence> list = new ArrayList<>();
+        List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
-            for (Sentence sentence : paragraph.getSentenceList()) {
-                sentence.getWordsListWithBeginVowel();
-                list.add(sentence);
+            for (Sentence sentencePart : paragraph.getSentenceList()) {
+                for (SentencePart part : sentencePart.getWordsListWithBeginVowel()) {
+                    list.add(part);
 
+                }
+                }
             }
-        }
+        list.sort(Comparator.comparing(SentencePart::toString));
+        list.forEach(System.out::println);
 
     }
 

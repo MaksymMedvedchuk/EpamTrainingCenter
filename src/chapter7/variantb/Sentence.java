@@ -72,12 +72,13 @@ public class Sentence {
         return sentencePartList.get(sentencePartList.size() - 1);
     }
 
-    public void getWordsListWithBeginVowel() {
-        sentencePartList.stream()
+    public List<SentencePart> getWordsListWithBeginVowel() {
+        return sentencePartList.stream()
                 .map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()))
                 .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word)
                 .sorted(Comparator.comparing(SentencePart::toString))
-                .forEach(sentencePart -> System.out.println(sentencePart + " "));
+                .collect(Collectors.toList());
+                //.forEach(sentencePart -> System.out.println(sentencePart + " "));
 
 
     }
