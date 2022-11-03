@@ -47,7 +47,7 @@ public class Text {
         }
     }
 
-    public void printWordsAlphabeticalOrderByFirstLetter() {
+    public void printWordsAlphabeticalOrderByFirstLetter() {//Починати з цього!!!
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
@@ -75,37 +75,32 @@ public class Text {
         list.sort(Comparator.comparing(SentencePart::toString));
     }
 
-    public void print(String input) {
+    public void sortByGivenLetter(String input) {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
                 for (SentencePart sentencePart : sentence.getSentencePartList()) {
                     sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-                        if (sentencePart.toString().contains(input)) {
-                            list.add(sentencePart);
-                        }
-
-                    }
-                }
-            }
-        list.sort(new WordComparatorByLetter(input));
-        //list.forEach(System.out::println);
-        }
-
-    public void sortWordsAlphabeticalOrderByFirstLetter() {
-        List<SentencePart> list = new ArrayList<>();
-        for (Paragraph paragraph : paragraphList) {
-            for (Sentence sentence : paragraph.getSentenceList()) {
-                for (SentencePart sentencePart : sentence.getSentencePartList()) {
-                    sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-                    if (sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER) && sentencePart instanceof Word) {
+                    if (sentencePart.toString().contains(input)) {
                         list.add(sentencePart);
                     }
                 }
             }
-
         }
-        list.sort(Comparator.comparing(SentencePart::toString));
+        list.sort(new WordComparatorByLetter(input));
+        list.forEach(System.out::println);//тут без вивести на екран, але коли через ранер цей метод кличу, виводить просто тест?
+    }
+
+    public void sortWordsAlphabeticalOrderByFirstLetter() {
+        List<Sentence> list = new ArrayList<>();
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+                sentence.getWordsListWithBeginVowel();
+                list.add(sentence);
+
+            }
+        }
+
     }
 
 
@@ -117,8 +112,7 @@ public class Text {
     public List<Paragraph> getParagraphList() {
         return new ArrayList<>(paragraphList);
     }
-
-   }
+}
 
 
 

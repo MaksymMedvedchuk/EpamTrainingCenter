@@ -72,17 +72,26 @@ public class Sentence {
         return sentencePartList.get(sentencePartList.size() - 1);
     }
 
-    public List<SentencePart> getWordsListWithBeginVowel() {
-        List<SentencePart> list = new ArrayList<>();
-        for (SentencePart sentencePart : sentencePartList) {
-            SentencePart part = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-            if (part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word) {
-                list.add(part);
-            }
-        }
-        list.sort(Comparator.comparing(SentencePart::toString));
-        return list;
+    public void getWordsListWithBeginVowel() {
+        sentencePartList.stream()
+                .map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()))
+                .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word)
+                .sorted(Comparator.comparing(SentencePart::toString))
+                .forEach(sentencePart -> System.out.println(sentencePart + " "));
+
+
     }
+
+//        List<SentencePart> list = new ArrayList<>();
+//        for (SentencePart sentencePart : sentencePartList) {
+//            SentencePart part = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
+//            if (part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word) {
+//                list.add(part);
+//            }
+//        }
+//        list.sort(Comparator.comparing(SentencePart::toString));
+//        return list;
+//    }
 
 //    public List<SentencePart> getWithI(String input){
 //        List<SentencePart> list = new ArrayList<>();
@@ -91,11 +100,6 @@ public class Sentence {
 //        }
 //        return list;
 //    }
-
-   
-
-
-
 }
 
 

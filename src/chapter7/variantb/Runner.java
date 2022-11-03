@@ -10,25 +10,25 @@ public class Runner {
                 "Some operations advance this current position past the characters processed.";
 
         Text text = Text.parseText(input);
-//        text.hashCode();
-//        System.out.println(text);
-//        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//        text.removeWordsOfGivenLengthAndBeginsVowel(6);//
-//        System.out.println(text);
-        //       Text text1 = Text.parseText(input);
-//        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//        text1.printSentencesOrderIncreasingWords();
-//        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//        text.swapFirstAndLastSentenceWords();
-//        System.out.println(text);
-//        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//        text.printWordsAlphabeticalOrderByFirstLetter();
-//        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//        text.sortWordsAlphabeticalOrderByFirstLetter();
-        //       Sentence sentence = new Sentence(input);
-        //       System.out.println(sentence.get("i"));
-//        System.out.println(sentence.getWordsListWithBeginVowel());
-        text.print("i");
+        text.hashCode();
+        System.out.println(text);
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.removeWordsOfGivenLengthAndBeginsVowel(6);
+        System.out.println(text);
+        Text text1 = Text.parseText(input);
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text1.printSentencesOrderIncreasingWords();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.swapFirstAndLastSentenceWords();
+        System.out.println(text);
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.printWordsAlphabeticalOrderByFirstLetter();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.sortByGivenLetter("i");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        text.sortWordsAlphabeticalOrderByFirstLetter();
+
+
 
     }
 }
