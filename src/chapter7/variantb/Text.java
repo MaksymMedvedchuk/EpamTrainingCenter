@@ -1,5 +1,8 @@
 package chapter7.variantb;
 
+import chapter7.variantb.myComparator.WordComparatorByFirstVowelLetter;
+import chapter7.variantb.myComparator.WordComparatorByLetter;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -104,11 +107,9 @@ public class Text {
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
                 sentence.checkLongestPalindromeSubstring();
-                }
             }
         }
-
-
+    }
 
     @Override
     public String toString() {

@@ -1,4 +1,6 @@
-package chapter7.variantb;
+package chapter7.variantb.myComparator;
+
+import chapter7.variantb.SentencePart;
 
 import java.util.Comparator;
 
