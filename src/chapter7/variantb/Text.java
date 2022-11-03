@@ -79,11 +79,9 @@ public class Text {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
-                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+                for (SentencePart sentencePart : sentence.getWordWithLetter_i(input)) {
                     sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-                    if (sentencePart.toString().contains(input)) {
-                        list.add(sentencePart);
-                    }
+                    list.add(sentencePart);
                 }
             }
         }
@@ -95,17 +93,39 @@ public class Text {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentencePart : paragraph.getSentenceList()) {
-                for (SentencePart part : sentencePart.getWordsListWithBeginVowel()) {
-                    list.add(part);
-
-                }
-                }
+                list.addAll(sentencePart.getWordsListWithBeginVowel());
             }
-        list.sort(Comparator.comparing(SentencePart::toString));
+        }
+        list.sort(new WordComparatorByFirstVowelLetter());
         list.forEach(System.out::println);
-
     }
 
+    public void checkWordForPalindrome(String string){
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+                for (SentencePart sentencePart : sentence.getSentencePartList()) {
+                   if (sentencePart instanceof Word && isPalindrome(string))
+                    System.out.println(sentencePart);
+
+                    }
+                }
+            }
+        }
+
+
+    public boolean isPalindrome(String text) {
+        String clean = text.replaceAll("\\s+", "").toLowerCase();
+        int length = clean.length();
+        int forward = 0;
+        int backward = length - 1;
+        while (backward > forward) {
+            char forwardChar = clean.charAt(forward++);
+            char backwardChar = clean.charAt(backward--);
+            if (forwardChar != backwardChar)
+                return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() {

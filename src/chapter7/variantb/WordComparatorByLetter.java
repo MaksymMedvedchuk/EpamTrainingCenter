@@ -20,7 +20,7 @@ public class WordComparatorByLetter implements Comparator<SentencePart> {
         }
     }
 
-    public int getQuantityIInWordCount(SentencePart input){
+    public int getQuantityIInWordCount(SentencePart input) {
         int count = 0;
         String lowerCase = input.toString().toLowerCase();
         int index = lowerCase.indexOf(letter);//поветає перший індекс моєї літери?

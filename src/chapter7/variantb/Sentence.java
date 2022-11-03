@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 public class Sentence {
 
 
-
     private static final String WORD_BEGINS_VOWEL_LETTER = "^[aieouAIEOU].*";
 
     private final List<SentencePart> sentencePartList = new ArrayList<>();
@@ -54,14 +53,8 @@ public class Sentence {
                 && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
     }
 
-    public int getWordCount() {
-        long count = 0L;
-        for (SentencePart sentencePart : sentencePartList) {
-            if (sentencePart instanceof Word) {
-                count++;
-            }
-        }
-        return (int) count;
+    public long getWordCount() {
+        return sentencePartList.stream().filter(sentencePart -> sentencePart instanceof Word).count();
     }
 
     public SentencePart getFirstWord() {
@@ -78,29 +71,15 @@ public class Sentence {
                 .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word)
                 .sorted(Comparator.comparing(SentencePart::toString))
                 .collect(Collectors.toList());
-                //.forEach(sentencePart -> System.out.println(sentencePart + " "));
-
-
     }
 
-//        List<SentencePart> list = new ArrayList<>();
-//        for (SentencePart sentencePart : sentencePartList) {
-//            SentencePart part = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
-//            if (part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word) {
-//                list.add(part);
-//            }
-//        }
-//        list.sort(Comparator.comparing(SentencePart::toString));
-//        return list;
-//    }
-
-//    public List<SentencePart> getWithI(String input){
-//        List<SentencePart> list = new ArrayList<>();
-//        for (SentencePart sentencePart : sentencePartList) {
-//            if (sentencePart.toString().contains(input)) list.add(sentencePart);
-//        }
-//        return list;
-//    }
+    public List<SentencePart> getWordWithLetter_i(String input){
+        List<SentencePart> list = new ArrayList<>();
+        for (SentencePart sentencePart : sentencePartList) {
+            if (sentencePart.toString().contains(input)) list.add(sentencePart);
+        }
+        return list;
+    }
 }
 
 
