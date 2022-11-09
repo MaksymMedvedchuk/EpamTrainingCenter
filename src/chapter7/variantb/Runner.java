@@ -27,9 +27,5 @@ public class Runner {
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 //        text.sortWordsAlphabeticalOrderByFirstLetter();
 //        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-//       text.checkWordForPalindrome();
-       Sentence sentence = new Sentence(input);
-       sentence.longestPalindromeString(input);
-
     }
 }

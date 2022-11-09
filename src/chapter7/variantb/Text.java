@@ -102,7 +102,7 @@ public class Text {
         list.sort(new WordComparatorByFirstVowelLetter());
         list.forEach(System.out::println);
     }
-    
+
     @Override
     public String toString() {
         return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));
