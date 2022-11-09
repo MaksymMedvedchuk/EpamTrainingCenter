@@ -102,15 +102,7 @@ public class Text {
         list.sort(new WordComparatorByFirstVowelLetter());
         list.forEach(System.out::println);
     }
-
-    public void checkWordForPalindrome() {
-        for (Paragraph paragraph : paragraphList) {
-            for (Sentence sentence : paragraph.getSentenceList()) {
-                sentence.checkLongestPalindromeSubstring();
-            }
-        }
-    }
-
+    
     @Override
     public String toString() {
         return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));
