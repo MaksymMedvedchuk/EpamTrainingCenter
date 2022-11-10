@@ -6,30 +6,26 @@ import java.util.Comparator;
 
 public class WordComparatorByLetter implements Comparator<SentencePart> {
 
-    public String letter;
+    private final char letter;
 
-    public WordComparatorByLetter(String letter) {
+    public WordComparatorByLetter(char letter) {
         this.letter = letter;
     }
 
     @Override
     public int compare(SentencePart someFirstWord, SentencePart someSecondWord) {
-        int result = Integer.compare(getQuantityIInWordCount(someFirstWord), getQuantityIInWordCount(someSecondWord));
+        int result = Integer.compare(getLetterCount(someFirstWord), getLetterCount(someSecondWord));
         if (result == 0) {
-            return someFirstWord.toString().compareToIgnoreCase(someSecondWord.toString());//порівнюємо кожен чар по порядку словника
+            return someFirstWord.toString().compareToIgnoreCase(someSecondWord.toString());
         } else {
             return result;
         }
     }
 
-    public int getQuantityIInWordCount(SentencePart input) {
+    public int getLetterCount(SentencePart word) {//назва + реалізація!!!
         int count = 0;
-        String lowerCase = input.toString().toLowerCase();
-        int index = lowerCase.indexOf(letter);//поветає перший індекс моєї літери?
-        while (index >= 0) {
-            count++;
-            index = lowerCase.indexOf(letter, index + 1);
-        }
+        char[] lowerCaseWord = word.toString().toLowerCase().toCharArray();
+        for (char c : lowerCaseWord) if (c == letter) count++;
         return count;
     }
 }

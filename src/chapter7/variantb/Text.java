@@ -1,6 +1,6 @@
 package chapter7.variantb;
 
-import chapter7.variantb.myComparator.WordComparatorByFirstVowelLetter;
+import chapter7.variantb.myComparator.WordComparatorByFirstConsonantLetter;
 import chapter7.variantb.myComparator.WordComparatorByLetter;
 
 import java.util.*;
@@ -50,7 +50,7 @@ public class Text {
         }
     }
 
-    public void printWordsAlphabeticalOrderByFirstLetter() {//Починати з цього!!!
+    public void printWordsAlphabeticalOrderByFirstLetter() {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
@@ -60,46 +60,46 @@ public class Text {
                 }
             }
         }
-        getSort(list);
+        sort(list);
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
-            if (isEqualFirstLetters(list, i))
+            if (isEqualFirstLettersAdjacentWords(list, i))
                 stringBuilder.append(list.get(i)).append(Delimiter.SENTENCE_PART_SPACE.getDelimiter());
             else stringBuilder.append(list.get(i - 1)).append(Delimiter.PARAGRAPH_DELIMITER.getDelimiter());
         }
         System.out.println(stringBuilder);
     }
 
-    private boolean isEqualFirstLetters(List<SentencePart> list, int i) {//не повинен буду статік?
+    private boolean isEqualFirstLettersAdjacentWords(List<SentencePart> list, int i) {//змінив назву методу!!!
         return i == 0 || list.get(i - 1).toString().charAt(0) == list.get(i).toString().charAt(0);
     }
 
-    private void getSort(List<SentencePart> list) {
+    private void sort(List<SentencePart> list) {
         list.sort(Comparator.comparing(SentencePart::toString));
     }
 
-    public void sortByGivenLetter(String input) {
+    public List<SentencePart> sortByGivenLetter(char letter) {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
-                for (SentencePart sentencePart : sentence.getWordWithLetter_i(input)) {
+                for (SentencePart sentencePart : sentence.getWordsContainingLetter(String.valueOf(letter))) {//змінив назву методу!!!
                     sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
                     list.add(sentencePart);
                 }
             }
         }
-        list.sort(new WordComparatorByLetter(input));
-        list.forEach(System.out::println);//тут без вивести на екран, але коли через ранер цей метод кличу, виводить просто тест?
+        list.sort(new WordComparatorByLetter(letter));
+        return list;
     }
 
-    public void sortWordsAlphabeticalOrderByFirstLetter() {
+    public void sortByFirstConsonantLetter() {//назва!!!
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentencePart : paragraph.getSentenceList()) {
-                list.addAll(sentencePart.getWordsListWithBeginVowel());
+                list.addAll(sentencePart.getWordsBeginVowel());
             }
         }
-        list.sort(new WordComparatorByFirstVowelLetter());
+        list.sort(new WordComparatorByFirstConsonantLetter());
         list.forEach(System.out::println);
     }
 

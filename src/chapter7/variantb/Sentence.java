@@ -64,7 +64,7 @@ public class Sentence {
         return sentencePartList.get(sentencePartList.size() - 1);
     }
 
-    public List<SentencePart> getWordsListWithBeginVowel() {
+    public List<SentencePart> getWordsBeginVowel() {
         return sentencePartList.stream()
                 .map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()))
                 .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word)
@@ -72,10 +72,10 @@ public class Sentence {
                 .collect(Collectors.toList());
     }
 
-    public List<SentencePart> getWordWithLetter_i(String input) {
+    public List<SentencePart> getWordsContainingLetter(String letter) {//назва!!!
         List<SentencePart> list = new ArrayList<>();
         for (SentencePart sentencePart : sentencePartList) {
-            if (sentencePart.toString().contains(input)) list.add(sentencePart);
+            if (sentencePart.toString().contains(letter)) list.add(sentencePart);
         }
         return list;
     }
