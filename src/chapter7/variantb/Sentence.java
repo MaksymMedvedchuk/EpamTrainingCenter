@@ -67,7 +67,7 @@ public class Sentence {
     public List<SentencePart> getWordsBeginVowel() {
         return sentencePartList.stream()
                 .map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()))
-                .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word)
+                .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word && part.toString().length() >= 2)
                 .sorted(Comparator.comparing(SentencePart::toString))
                 .collect(Collectors.toList());
     }

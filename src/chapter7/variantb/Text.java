@@ -88,19 +88,27 @@ public class Text {
                 }
             }
         }
-        list.sort(new WordComparatorByLetter(letter));
+        list.sort(new WordComparatorByLetter(letter));//перероюив Comparator!!!
         return list;
     }
 
-    public void sortByFirstConsonantLetter() {//назва!!!
+    public List<SentencePart> sortByFirstConsonantLetter() {//назва!!!
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentencePart : paragraph.getSentenceList()) {
                 list.addAll(sentencePart.getWordsBeginVowel());
             }
         }
-        list.sort(new WordComparatorByFirstConsonantLetter());
-        list.forEach(System.out::println);
+        list.sort(new WordComparatorByFirstConsonantLetter());//доробив Comparator!!!
+        return list;
+    }
+
+    public void checkLongestPalindromeSubstring() {
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+
+            }
+        }
     }
 
     @Override
