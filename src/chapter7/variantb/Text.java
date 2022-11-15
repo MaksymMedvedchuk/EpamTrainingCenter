@@ -70,7 +70,7 @@ public class Text {
         System.out.println(stringBuilder);
     }
 
-    private boolean isEqualFirstLettersAdjacentWords(List<SentencePart> list, int i) {//змінив назву методу!!!
+    private boolean isEqualFirstLettersAdjacentWords(List<SentencePart> list, int i) {
         return i == 0 || list.get(i - 1).toString().charAt(0) == list.get(i).toString().charAt(0);
     }
 
@@ -82,36 +82,28 @@ public class Text {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
-                for (SentencePart sentencePart : sentence.getWordsContainingLetter(String.valueOf(letter))) {//змінив назву методу!!!
+                for (SentencePart sentencePart : sentence.getWordsContainingLetter(String.valueOf(letter))) {
                     sentencePart = SentencePart.parseSentencePart(sentencePart.toString().toLowerCase());
                     list.add(sentencePart);
                 }
             }
         }
-        list.sort(new WordComparatorByLetter(letter));//перероюив Comparator!!!
+        list.sort(new WordComparatorByLetter(letter));
         return list;
     }
 
-    public List<SentencePart> sortByFirstConsonantLetter() {//назва!!!
+    public List<SentencePart> sortByFirstConsonantLetter() {
         List<SentencePart> list = new ArrayList<>();
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentencePart : paragraph.getSentenceList()) {
                 list.addAll(sentencePart.getWordsBeginVowel());
             }
         }
-        list.sort(new WordComparatorByFirstConsonantLetter());//доробив Comparator!!!
+        list.sort(new WordComparatorByFirstConsonantLetter());
         return list;
     }
 
-    public void checkLongestPalindromeSubstring() {
-        for (Paragraph paragraph : paragraphList) {
-            for (Sentence sentence : paragraph.getSentenceList()) {
-
-            }
-        }
-    }
-
-    public void deleteLongestSubstring(String begin, String end){
+    public void deleteLongestSubstringInSentence(String begin, String end){
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
                sentence.deleteLongestSubstringInSentence(begin, end);

@@ -48,7 +48,8 @@ public class Sentence {
     }
 
     public void removeWordsOfGivenLengthAndBeginsVowel(int length) {
-        sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
+        sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length
+                && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
     }
 
     public long getWordCount() {
@@ -67,7 +68,7 @@ public class Sentence {
         return sentencePartList.stream().map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase())).filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word && part.toString().length() >= 2).sorted(Comparator.comparing(SentencePart::toString)).collect(Collectors.toList());
     }
 
-    public List<SentencePart> getWordsContainingLetter(String letter) {//назва!!!
+    public List<SentencePart> getWordsContainingLetter(String letter) {
         List<SentencePart> list = new ArrayList<>();
         for (SentencePart sentencePart : sentencePartList) {
             if (sentencePart.toString().contains(letter)) list.add(sentencePart);
@@ -86,6 +87,8 @@ public class Sentence {
         System.out.println(list);
     }
 }
+
+//робив ретерн і хотів друкувати через Ранер, але друкувало просто текст
 
 
 
