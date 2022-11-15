@@ -4,7 +4,7 @@ public class Runner {
     public static void main(String[] args) {
 
 //String input = "asddsff sad fff";
-        String input = "Im am asdfdsa. The program adsffffdsd nitit os JAVA";
+        String input = "Im am afasdfdsa. The program adsffffdsd nitit os JAVA";
 //        String input = "\tThe, string the tokenizer class allows an to application to break a string into tokens." +
 //                "The tokenization method is much simpler than the one used by the StreamTokenizer class. " +
 //                "\tThe StringTokenizer methods do not distinguish among identifiers, numbers, and quoted strings, nor do they recognize and skip comments." +

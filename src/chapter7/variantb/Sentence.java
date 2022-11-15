@@ -79,9 +79,9 @@ public class Sentence {
         List<SentencePart> list = new ArrayList<>();
         for (SentencePart sentencePart : sentencePartList) {
             int beginIndex = sentencePart.content.indexOf(begin);
-            int endIndex = sentencePart.content.lastIndexOf(end);
+            int endIndex = sentencePart.content.lastIndexOf(end) + 1;
             if (beginIndex == -1) list.add(sentencePart);
-            else list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex + 1, endIndex), "")));
+            else list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex, endIndex), "")));
         }
         System.out.println(list);
     }
