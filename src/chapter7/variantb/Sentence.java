@@ -82,7 +82,8 @@ public class Sentence {
             int beginIndex = sentencePart.content.indexOf(begin);
             int endIndex = sentencePart.content.lastIndexOf(end) + 1;
             if (beginIndex == -1) list.add(sentencePart);
-            else list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex, endIndex), "")));
+            else
+                list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex, endIndex), "")));
         }
         System.out.println(list);
     }
