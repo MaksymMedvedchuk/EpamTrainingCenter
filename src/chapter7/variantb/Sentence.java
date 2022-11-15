@@ -48,8 +48,7 @@ public class Sentence {
     }
 
     public void removeWordsOfGivenLengthAndBeginsVowel(int length) {
-        sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length
-                && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
+        sentencePartList.removeIf(sentencePart -> sentencePart instanceof Word && sentencePart.toString().length() == length && !sentencePart.toString().matches(WORD_BEGINS_VOWEL_LETTER));
     }
 
     public long getWordCount() {
@@ -65,11 +64,7 @@ public class Sentence {
     }
 
     public List<SentencePart> getWordsBeginVowel() {
-        return sentencePartList.stream()
-                .map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase()))
-                .filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word && part.toString().length() >= 2)
-                .sorted(Comparator.comparing(SentencePart::toString))
-                .collect(Collectors.toList());
+        return sentencePartList.stream().map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase())).filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word && part.toString().length() >= 2).sorted(Comparator.comparing(SentencePart::toString)).collect(Collectors.toList());
     }
 
     public List<SentencePart> getWordsContainingLetter(String letter) {//назва!!!
@@ -79,7 +74,25 @@ public class Sentence {
         }
         return list;
     }
+
+    public void deleteLongestSubstringInSentence(String begin, String end) {
+        List<SentencePart> list = new ArrayList<>();
+        for (SentencePart sentencePart : sentencePartList) {
+            int beginIndex = sentencePart.content.indexOf(begin);
+            int endIndex = sentencePart.content.lastIndexOf(end);
+            if (beginIndex == -1) list.add(sentencePart);
+            else list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex + 1, endIndex), "")));
+        }
+        System.out.println(list);
+    }
 }
+
+
+
+
+
+
+
 
 
 

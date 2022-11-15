@@ -111,6 +111,15 @@ public class Text {
         }
     }
 
+    public void deleteLongestSubstring(String begin, String end){
+        for (Paragraph paragraph : paragraphList) {
+            for (Sentence sentence : paragraph.getSentenceList()) {
+               sentence.deleteLongestSubstringInSentence(begin, end);
+                }
+            }
+        }
+
+
     @Override
     public String toString() {
         return paragraphList.stream().map(Objects::toString).collect(Collectors.joining(Delimiter.PARAGRAPH_DELIMITER.getDelimiter()));
