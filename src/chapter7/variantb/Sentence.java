@@ -76,20 +76,74 @@ public class Sentence {
         return list;
     }
 
-    public void deleteLongestSubstringInSentence(String begin, String end) {
-        List<SentencePart> list = new ArrayList<>();
+    public void deleteLongestSubstringInSentence(char begin, char end) {
+        SentencePart firstOccurrence = null;
+        SentencePart lastOccurrence = null;
         for (SentencePart sentencePart : sentencePartList) {
-            int beginIndex = sentencePart.content.indexOf(begin);
-            int endIndex = sentencePart.content.lastIndexOf(end) + 1;
-            if (beginIndex == -1) list.add(sentencePart);
-            else
-                list.add(SentencePart.parseSentencePart(sentencePart.content.replaceAll(sentencePart.content.substring(beginIndex, endIndex), "")));
+            if (firstOccurrence == null && sentencePart.content.contains("" + begin)) firstOccurrence = sentencePart;
+            if (sentencePart.content.contains("" + end)) lastOccurrence = sentencePart;
         }
-        System.out.println(list);
+        if (firstOccurrence == null || lastOccurrence == null) return;
+        int firstSentencePartIndex = sentencePartList.indexOf(firstOccurrence);
+        int lastSentencePartIndex = sentencePartList.lastIndexOf(lastOccurrence);
+
+        if (firstSentencePartIndex > lastSentencePartIndex) return;
+
+        if (firstSentencePartIndex == lastSentencePartIndex) {
+            processIfTheSameSentencePart(begin, end, firstSentencePartIndex);
+            return;
+        }
+
+        List<SentencePart> temporarySentencePartList = new ArrayList<>();
+        for (int i = 0; i < sentencePartList.size(); i++) {
+            if (i <= firstSentencePartIndex) temporarySentencePartList.add(sentencePartList.get(i));
+            if (i >= lastSentencePartIndex) temporarySentencePartList.add(sentencePartList.get(i));
+        }
+
+        excludeSubstringAfterFirstOccurrence(begin, temporarySentencePartList);
+
+        excludeSubstringBeforeLastOccurrence(end, temporarySentencePartList);
+
+        this.sentencePartList.removeAll(sentencePartList);
+        this.sentencePartList.addAll(temporarySentencePartList);
+    }
+
+    private void excludeSubstringBeforeLastOccurrence(char end, List<SentencePart> temporarySentencePartList) {
+        for (int i = temporarySentencePartList.size() - 1; i >= 0; i--) {
+            SentencePart sentencePart = temporarySentencePartList.get(i);
+            if (sentencePart.content.contains("" + end)) {
+                int endIndex = sentencePart.content.lastIndexOf(end);
+                String toReplace = sentencePart.content.substring(0, endIndex + 1);
+                sentencePart.content = sentencePart.content.replace(toReplace, "");
+                break;
+            }
+        }
+    }
+
+    private void excludeSubstringAfterFirstOccurrence(char begin, List<SentencePart> temporarySentencePartList) {
+        for (SentencePart sentencePart : temporarySentencePartList) {
+            if (sentencePart.content.contains("" + begin)) {
+                int beginIndex = sentencePart.content.indexOf(begin);
+                String toReplace = sentencePart.content.substring(beginIndex);
+                sentencePart.content = sentencePart.content.replace(toReplace, "");
+                break;
+            }
+        }
+    }
+
+    private void processIfTheSameSentencePart(char begin, char end, int lastSentencePartIndex) {
+        SentencePart target = sentencePartList.get(lastSentencePartIndex);
+        int firstCharIndex = target.content.indexOf(begin);
+        int lastCharIndex = target.content.lastIndexOf(end);
+        if (firstCharIndex > lastCharIndex) return;
+        String toReplace = target.content.substring(firstCharIndex, lastCharIndex + 1);
+        target.content = target.content.replace(toReplace, "");
     }
 }
 
-//робив ретерн і хотів друкувати через Ранер, але друкувало просто текст
+
+
+
 
 
 

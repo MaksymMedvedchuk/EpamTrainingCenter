@@ -103,7 +103,7 @@ public class Text {
         return list;
     }
 
-    public void deleteLongestSubstringInSentence(String begin, String end) {
+    public void deleteLongestSubstringInSentence(char begin, char end) {
         for (Paragraph paragraph : paragraphList) {
             for (Sentence sentence : paragraph.getSentenceList()) {
                 sentence.deleteLongestSubstringInSentence(begin, end);
