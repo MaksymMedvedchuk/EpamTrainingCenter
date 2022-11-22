@@ -1,6 +1,9 @@
 package helper;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class InputOutputHelper {
@@ -32,7 +35,7 @@ public class InputOutputHelper {
     }
 
 //    public void writeTextToFile(StringBuilder inputText)  {
-//        try (FileWriter fileWriter = new FileWriter(PATH_TO_PROPERTIES, true)){
+//        try (FileWriter fileWriter = new FileWriter(PATH_TO_PROPERTIES)){
 //            Properties properties = new Properties();
 //            properties.setProperty("outputFile", "" + "JavaOutput.txt");
 //            properties.store(fileWriter, null);

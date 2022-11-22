@@ -11,8 +11,6 @@ public class SubstringRemove {
             formattedString = text.replaceAll(inputSubstring, "");
         return formattedString;
     }
-
-
 }
 
 
