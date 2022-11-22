@@ -1,7 +1,5 @@
 package chapter9.varianta;
 
-import helper.InputOutputHelper;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;

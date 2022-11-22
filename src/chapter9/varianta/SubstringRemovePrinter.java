@@ -10,6 +10,7 @@ public class SubstringRemovePrinter {
         String text = inputOutputHelper.getTextFromInputFile();
         if (text.contains(inputSubstring))
             formattedString = text.replaceAll(inputSubstring, "");
+        System.out.println(formattedString);
         inputOutputHelper.setTextToFile(formattedString);
     }
 }
