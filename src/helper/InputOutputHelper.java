@@ -20,8 +20,8 @@ public class InputOutputHelper {
         }
     }
 
-    public void writeTextToFile(String inputText) {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(PropertiesReader.getProperties(PropertiesKey.OUTPUT_FILE.getKey())))){
+    public void setTextToFile(String inputText) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(PropertiesReader.getProperties(PropertiesKey.OUTPUT_FILE.getKey())))) {
             bufferedWriter.write(inputText);
         } catch (IOException e) {
             e.printStackTrace();

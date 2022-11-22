@@ -9,9 +9,10 @@ public class Runner {
         WordsWithVowelPrinter wordsWithVowelPrinter = new WordsWithVowelPrinter();
         WordsWithSameLetterPrinter wordsWithSameLetterPrinter = new WordsWithSameLetterPrinter();
         substringRemovePrinter.removeGivenSubstring("las");
+        wordsWithVowelPrinter.findWordWithVowel();
 
 
-//        System.out.println(wordsWithVowelPrinter.findWordWithVowel());
+
 //        wordsWithSameLetterPrinter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
     }
 }
