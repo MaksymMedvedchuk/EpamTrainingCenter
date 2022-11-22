@@ -5,12 +5,12 @@ import java.io.IOException;
 public class Runner {
 
     public static void main(String[] args) throws IOException {
-        SubstringRemove substringRemove = new SubstringRemove();
-        WordsWithVowel wordsWithVowel = new WordsWithVowel();
-        WordsWithSameLetter wordsWithSameLetter = new WordsWithSameLetter();
-        System.out.println(substringRemove.removeGivenSubstring("las"));
-        System.out.println(wordsWithVowel.findWordWithVowel());
-        wordsWithSameLetter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
+        SubstringRemovePrinter substringRemovePrinter = new SubstringRemovePrinter();
+        WordsWithVowelPrinter wordsWithVowelPrinter = new WordsWithVowelPrinter();
+        WordsWithSameLetterPrinter wordsWithSameLetterPrinter = new WordsWithSameLetterPrinter();
+        System.out.println(substringRemovePrinter.removeGivenSubstring("las"));
+//        System.out.println(wordsWithVowelPrinter.findWordWithVowel());
+//        wordsWithSameLetterPrinter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
     }
 }
 
