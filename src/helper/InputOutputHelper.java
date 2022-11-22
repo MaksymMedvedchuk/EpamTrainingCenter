@@ -7,7 +7,7 @@ public class InputOutputHelper {
 
     public static final String PATH_TO_PROPERTIES = "application.properties";
 
-    public static String getTextFromFile(String key) {
+    public static String getKeyFromProperties(String key) { //члому ідеа каже робити ці методи статичними?
         try (InputStream input = InputOutputHelper.class.getClassLoader().getResourceAsStream(PATH_TO_PROPERTIES)) {
             Properties properties = new Properties();
             properties.load(input);
@@ -18,18 +18,29 @@ public class InputOutputHelper {
         return key;
     }
 
-    public void writeTextToFile() {
-        try (InputStream output = InputOutputHelper.class.getClassLoader().getResourceAsStream(PATH_TO_PROPERTIES)){
-            Properties properties = new Properties();
-            properties.store(output, null);
-            properties.setProperty("outputFile", "dddddddddddd");
-            System.out.println(properties);
+    public static StringBuilder getTextFromKey() {
+        StringBuilder stringBuilder = new StringBuilder();
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(InputOutputHelper.getKeyFromProperties("inputFile")))) {
+            String stringFromText;
+            while ((stringFromText = bufferedReader.readLine()) != null)
+                stringBuilder.append(stringFromText);
+            return stringBuilder;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
+        return stringBuilder;
     }
+
+//    public void writeTextToFile(StringBuilder inputText)  {
+//        try (FileWriter fileWriter = new FileWriter(PATH_TO_PROPERTIES, true)){
+//            Properties properties = new Properties();
+//            properties.setProperty("outputFile", "" + "JavaOutput.txt");
+//            properties.store(fileWriter, null);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
+
 
 
