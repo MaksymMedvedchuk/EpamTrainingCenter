@@ -11,7 +11,7 @@ public class SubstringRemovePrinter {
         if (text.contains(inputSubstring))
             formattedString = text.replaceAll(inputSubstring, "");
         System.out.println(formattedString);
-        inputOutputHelper.setTextToFile(formattedString);
+        inputOutputHelper.setTextToOutputFile(formattedString);
     }
 }
 

@@ -8,8 +8,8 @@ public class Runner {
         SubstringRemovePrinter substringRemovePrinter = new SubstringRemovePrinter();
         WordsWithVowelPrinter wordsWithVowelPrinter = new WordsWithVowelPrinter();
         WordsWithSameLetterPrinter wordsWithSameLetterPrinter = new WordsWithSameLetterPrinter();
-        substringRemovePrinter.removeGivenSubstring("las");
-       // wordsWithVowelPrinter.findWordWithVowel();
+        //substringRemovePrinter.removeGivenSubstring("las");
+        wordsWithVowelPrinter.findWordWithVowel();
 
 
 
