@@ -10,8 +10,12 @@ public class SubstringRemovePrinter {
         String text = inputOutputHelper.getTextFromInputFile();
         if (text.contains(inputSubstring))
             formattedString = text.replaceAll(inputSubstring, "");
-        System.out.println(formattedString);
+        printInfo(formattedString);
         inputOutputHelper.setTextToOutputFile(formattedString);
+    }
+
+    private void printInfo(String formattedString) {
+        System.out.println(formattedString);
     }
 }
 

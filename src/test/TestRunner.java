@@ -1,17 +1,20 @@
 package test;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 public class TestRunner {
     public static void main(String[] args) {
-        String s = "asdfgh fghf";
-        int begin = s.indexOf("s");
-        int end = s.lastIndexOf("f");
-        String sub = s.substring(begin, end);
-        System.out.println(s.replace(sub, ""));
-
-    }
 
 
     }
+
+
+}
 
 
 

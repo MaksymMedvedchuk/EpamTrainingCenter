@@ -8,12 +8,12 @@ public class Runner {
         SubstringRemovePrinter substringRemovePrinter = new SubstringRemovePrinter();
         WordsWithVowelPrinter wordsWithVowelPrinter = new WordsWithVowelPrinter();
         WordsWithSameLetterPrinter wordsWithSameLetterPrinter = new WordsWithSameLetterPrinter();
-        //substringRemovePrinter.removeGivenSubstring("las");
-        wordsWithVowelPrinter.findWordWithVowel();
-
-
-
+        NumbersInOrderPrinter numbersInOrderPrinter = new NumbersInOrderPrinter();
+//        substringRemovePrinter.removeGivenSubstring("las");
+//        wordsWithVowelPrinter.findWordWithVowel();
 //        wordsWithSameLetterPrinter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
+        numbersInOrderPrinter.findMaxConsecutiveDigits();
+
     }
 }
 

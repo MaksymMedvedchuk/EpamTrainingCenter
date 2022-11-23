@@ -12,7 +12,7 @@ public class InputOutputHelper {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(PropertiesReader.getProperties(PropertiesKey.INPUT_FILE.getKey())))) {
             String stringFromText;
             while ((stringFromText = bufferedReader.readLine()) != null)
-                stringBuilder.append(stringFromText);
+                stringBuilder.append(stringFromText).append(" ");
             return stringBuilder.toString();
         } catch (IOException e) {
             e.printStackTrace();
