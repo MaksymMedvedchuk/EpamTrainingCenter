@@ -3,7 +3,8 @@ package chapter9.varianta;
 public enum PropertiesKey {
     
     INPUT_FILE("inputFile"),
-    OUTPUT_FILE("outputFile");
+    OUTPUT_FILE("outputFile"),
+    INPUT_ARCHIVE_FILE("inputArchiveFile");
     
     private final String key;
 
