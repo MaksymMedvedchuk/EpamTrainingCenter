@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 
 public class StringReversePrinter {
 
+    //Ввести строки из файла, записать в список. Вывести строки в файл в обратном порядке
+
     private static final String DELIMITER = " ,.!;:?";
 
     public void expandString() {

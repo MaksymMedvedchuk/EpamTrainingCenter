@@ -11,6 +11,9 @@ public class WordsWithSameLetterPrinter {
     private static final String DELIMITER = " ,.!;:?";
     private static final String WORD_REGEX = "[a-zA-Z]+";
 
+    //Найти и вывести слова текста, для которых последняя буква одного слова
+    //совпадает с первой буквой следующего слова
+
     public void printWordsWithSameLastAndFirstLetterFollowOneAnother() {
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         String text = inputOutputHelper.getTextFromInputFile();
@@ -23,7 +26,7 @@ public class WordsWithSameLetterPrinter {
         }
         for (int i = 0; i < stringList.size() - 1; i++) {
             if (stringList.get(i).charAt(stringList.get(i).length() - 1) == stringList.get(i + 1).charAt(0)) {
-                stringBuilder.append(stringList.get(i)).append(" ").append(stringList.get(i + 1)).append(" ");//коди створював в цьому скопі stringBuilder, то додавалась тільки остання пара!!!
+                stringBuilder.append(stringList.get(i)).append(" ").append(stringList.get(i + 1)).append(" ");//коли створював в цьому скопі stringBuilder, то додавалась тільки остання пара!!!
                 inputOutputHelper.setTextToOutputFile(stringBuilder.toString());
             }
         }

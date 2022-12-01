@@ -9,6 +9,8 @@ public class WordsWithVowelPrinter {
     private static final String DELIMITER = " ,.!;:?";
     private static final String WORD_BEGINS_VOWEL_LETTER_REGEX = "^[aieouyAIEOUY].*";
 
+    //В каждой строке найти слова, начинающиеся с гласной буквы
+
     public void findWordWithVowel() {
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         String text = inputOutputHelper.getTextFromInputFile();
