@@ -1,7 +1,7 @@
 package helper;
 
-import chapter9.varianta.PropertiesKey;
-import chapter9.varianta.PropertiesReader;
+import chapter9.varianta.PropertiesKeys;
+import chapter9.varianta.PropertyReader;
 
 import java.io.*;
 import java.util.Enumeration;
@@ -12,10 +12,10 @@ public class InputOutputHelper {
 
     public String getTextFromInputFile() {
         StringBuilder stringBuilder = new StringBuilder();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(PropertiesReader.getProperties(PropertiesKey.INPUT_FILE.getKey())))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(PropertyReader.getProperties(PropertiesKeys.INPUT_FILE)))) {
             String stringFromText;
             while ((stringFromText = bufferedReader.readLine()) != null)
-                stringBuilder.append(stringFromText).append(" ");
+                stringBuilder.append(stringFromText).append("\n");
             return stringBuilder.toString();
         } catch (IOException e) {
             e.printStackTrace();
@@ -23,8 +23,8 @@ public class InputOutputHelper {
         }
     }
 
-    public void setTextToOutputFile(String inputText) {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(PropertiesReader.getProperties(PropertiesKey.OUTPUT_FILE.getKey())))) {
+    public void printTextToOutputFile(String inputText) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(PropertyReader.getProperties(PropertiesKeys.OUTPUT_FILE)))) {
             bufferedWriter.write(inputText);
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,7 +34,7 @@ public class InputOutputHelper {
 
     public String getTextFromArchive() {
         StringBuilder stringBuilder = new StringBuilder();
-        try (ZipFile zipFile = new ZipFile(PropertiesReader.getProperties(PropertiesKey.INPUT_ARCHIVE_FILE.getKey()))) { // звернення до архіва
+        try (ZipFile zipFile = new ZipFile(PropertyReader.getProperties(PropertiesKeys.INPUT_ARCHIVE_FILE))) { // звернення до архіва
             Enumeration<? extends ZipEntry> enumeration = zipFile.entries();//повертає все що лежить в архіві
             ZipEntry zipEntry = enumeration.nextElement();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(zipFile.getInputStream(zipEntry)));

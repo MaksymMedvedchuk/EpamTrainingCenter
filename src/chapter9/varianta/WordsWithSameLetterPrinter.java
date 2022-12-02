@@ -1,40 +1,28 @@
 package chapter9.varianta;
 
 import helper.InputOutputHelper;
+import helper.ParsingTextHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class WordsWithSameLetterPrinter {
 
-    private static final String DELIMITER = " ,.!;:?";
     private static final String WORD_REGEX = "[a-zA-Z]+";
 
-    //Найти и вывести слова текста, для которых последняя буква одного слова
-    //совпадает с первой буквой следующего слова
-
-    public void printWordsWithSameLastAndFirstLetterFollowOneAnother() {
+    public void printWordsWithSameLastAndFirstLetterFollowOneAnother() { //зробив хелпер на токінайзер
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
-        String text = inputOutputHelper.getTextFromInputFile();
         StringBuilder stringBuilder = new StringBuilder();
-        List<String> stringList = new ArrayList<>();
-        StringTokenizer stringTokenizer = new StringTokenizer(text, DELIMITER);
-        while (stringTokenizer.hasMoreElements()) {
-            String someString = stringTokenizer.nextToken();
-            if (someString.matches(WORD_REGEX)) stringList.add(someString);
+        List<String> list = new ArrayList<>();
+        for (String someString : ParsingTextHelper.getParsingText()) {
+            if (someString.matches(WORD_REGEX)) list.add(someString);
         }
-        for (int i = 0; i < stringList.size() - 1; i++) {
-            if (stringList.get(i).charAt(stringList.get(i).length() - 1) == stringList.get(i + 1).charAt(0)) {
-                stringBuilder.append(stringList.get(i)).append(" ").append(stringList.get(i + 1)).append(" ");//коли створював в цьому скопі stringBuilder, то додавалась тільки остання пара!!!
-                inputOutputHelper.setTextToOutputFile(stringBuilder.toString());
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i).charAt(list.get(i).length() - 1) == list.get(i + 1).charAt(0)) {
+                stringBuilder.append(list.get(i)).append(" ").append(list.get(i + 1)).append(" ");
+                inputOutputHelper.printTextToOutputFile(stringBuilder.toString());
             }
         }
-        printInfo(stringBuilder);
-    }
-
-    private void printInfo(StringBuilder stringBuilder) {
-        System.out.println(stringBuilder);
     }
 }
 

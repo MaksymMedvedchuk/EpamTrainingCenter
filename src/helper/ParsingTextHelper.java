@@ -1,26 +1,22 @@
-package chapter10;
-
-import helper.InputOutputHelper;
+package helper;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class StringReversePrinter {
+public class ParsingTextHelper {
 
-    private static final String DELIMITER = "\n";
+    private static final String DELIMITER = " ,.!;:?\n";
 
-    public void printStringInReverse() { //переробив метод
+    public static List<String> getParsingText() {
+        List<String> list = new ArrayList<>();
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         String text = inputOutputHelper.getTextFromInputFile();
-        List<String> list = new ArrayList<>();
         StringTokenizer stringTokenizer = new StringTokenizer(text, DELIMITER);
         while (stringTokenizer.hasMoreElements()) {
             String someString = stringTokenizer.nextToken();
-            list.add(someString + "\n");
+            list.add(someString);
         }
-        Collections.reverse(list);
-        inputOutputHelper.printTextToOutputFile(list.toString());
+        return list;
     }
 }

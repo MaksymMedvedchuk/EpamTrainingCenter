@@ -1,5 +1,7 @@
 package chapter9.varianta;
 
+import helper.ParsingTextHelper;
+
 import java.io.IOException;
 
 public class Runner {
@@ -9,10 +11,15 @@ public class Runner {
         WordsWithVowelPrinter wordsWithVowelPrinter = new WordsWithVowelPrinter();
         WordsWithSameLetterPrinter wordsWithSameLetterPrinter = new WordsWithSameLetterPrinter();
         ArchiveReader archiveReader = new ArchiveReader();
-        substringRemovePrinter.removeGivenSubstring("las");
-        wordsWithVowelPrinter.findWordWithVowel();
-        wordsWithSameLetterPrinter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
-        archiveReader.readFromFile();
+
+
+
+
+
+//        substringRemovePrinter.removeGivenSubstring("las");
+ //       wordsWithVowelPrinter.printWordWithVowel();
+               wordsWithSameLetterPrinter.printWordsWithSameLastAndFirstLetterFollowOneAnother();
+//        archiveReader.readFromFile();
     }
 }
 

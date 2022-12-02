@@ -1,6 +1,6 @@
 package chapter9.varianta;
 
-public enum PropertiesKey {
+public enum PropertiesKeys {
 
     INPUT_FILE("inputFile"),
     OUTPUT_FILE("outputFile"),
@@ -8,7 +8,7 @@ public enum PropertiesKey {
 
     private final String key;
 
-    PropertiesKey(String key) {
+    PropertiesKeys(String key) {
         this.key = key;
     }
 
