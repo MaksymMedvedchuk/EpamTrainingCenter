@@ -1,11 +1,13 @@
 package chapter10;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class NumberWithDigitsReverseOrder {
 
     public void printNumberWithDigitsReverseOrder(String number) {
-        Stack<Character> numbers = new Stack<>();
+        Deque<Character> numbers = new LinkedList<>();
         for (int i = 0; i < number.length(); i++) {
             numbers.push(number.charAt(i));
         }

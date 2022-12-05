@@ -13,6 +13,7 @@ public class ParsingTextHelper {
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         String text = inputOutputHelper.getTextFromInputFile();
         StringTokenizer stringTokenizer = new StringTokenizer(text, DELIMITER);
+
         while (stringTokenizer.hasMoreElements()) {
             String someString = stringTokenizer.nextToken();
             list.add(someString);
