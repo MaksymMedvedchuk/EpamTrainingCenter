@@ -24,8 +24,11 @@ public class Runner {
 //        System.out.println(setHelper.unionSets(firstSet, secondSet));
 
 
-        BracketChecker bracketChecker = new BracketChecker();
-        System.out.println(bracketChecker.isValidBrackets("({[]})"));
-        System.out.println(bracketChecker.isValidBrackets("({[})"));
+//        BracketChecker bracketChecker = new BracketChecker();
+//        System.out.println(bracketChecker.isValidBrackets("({[]})"));
+//        System.out.println(bracketChecker.isValidBrackets("({[})"));
+
+        UniqueWordsPrinter uniqueWordsPrinter = new UniqueWordsPrinter();
+        uniqueWordsPrinter.printerUniqueWords();
     }
 }
