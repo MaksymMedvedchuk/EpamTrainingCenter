@@ -11,24 +11,24 @@ public class Runner {
 //        NumberWithDigitsReverseOrder number = new NumberWithDigitsReverseOrder();
 //        number.printNumberWithDigitsReverseOrder("1234567");
 
-//        SetHelper<Integer> setHelper = new SetHelper<>();
-//        Set<Integer> firstSet = new HashSet<>();
-//        firstSet.add(1);
-//        firstSet.add(2);
-//        firstSet.add(8);
-//        Set<Integer> secondSet = new HashSet<>();
-//        secondSet.add(1);
-//        secondSet.add(2);
-//        secondSet.add(5);
-//        System.out.println(setHelper.intersectSets(firstSet, secondSet));
-//        System.out.println(setHelper.unionSets(firstSet, secondSet));
+        SetHelper<Integer> setHelper = new SetHelper<>();
+        Set<Integer> firstSet = new HashSet<>();
+        firstSet.add(1);
+        firstSet.add(2);
+        firstSet.add(8);
+        Set<Integer> secondSet = new HashSet<>();
+        secondSet.add(1);
+        secondSet.add(2);
+        secondSet.add(5);
+        System.out.println(setHelper.intersectSets(firstSet, secondSet));
+        System.out.println(setHelper.unionSets(firstSet, secondSet));
 
 
 //        BracketChecker bracketChecker = new BracketChecker();
 //        System.out.println(bracketChecker.isValidBrackets("({[]})"));
 //        System.out.println(bracketChecker.isValidBrackets("({[})"));
 
-        UniqueWordsPrinter uniqueWordsPrinter = new UniqueWordsPrinter();
-        uniqueWordsPrinter.printerUniqueWords();
+//        UniqueWordsPrinter uniqueWordsPrinter = new UniqueWordsPrinter();
+//        uniqueWordsPrinter.printerUniqueWords();
     }
 }
