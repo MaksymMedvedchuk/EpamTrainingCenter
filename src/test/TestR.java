@@ -1,21 +1,21 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class TestR {
+    public static void main(String[] args) {
+        InetAddress currentIP = null;
+        InetAddress bsuIP = null;
+        try {
+            currentIP = InetAddress.getLocalHost();
+            System.out.println("My IP -> " + currentIP.getHostAddress());
+            bsuIP = InetAddress.getByName("www.ican-school.com");
+            System.out.println("BSU -> " + bsuIP.getHostAddress());
 
-    List<Test> stringList = new ArrayList<>();
-
-    public void addString(Test string){
-        stringList.add(string);
-
-    }
-
-    @Override
-    public String toString() {
-        return stringList.stream().map(Objects::toString).collect(Collectors.joining(" "));
+        } catch (
+                UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
