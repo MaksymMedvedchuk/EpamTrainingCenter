@@ -1,6 +1,7 @@
 package chapter6.task2;
 
 public abstract class Student implements Entrant {
+
     private final String name;
     private final String surname;
     private final int age;
@@ -15,7 +16,7 @@ public abstract class Student implements Entrant {
         this.englishGrade = englishGrade;
     }
 
-    public double getAverageGrade(){
+    public double getAverageGrade() {
         return (this.englishGrade + this.mathGrade) / 2;
     }
 

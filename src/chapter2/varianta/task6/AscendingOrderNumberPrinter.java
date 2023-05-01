@@ -6,8 +6,8 @@ import java.util.Optional;
 
 public class AscendingOrderNumberPrinter {
     public void printNumbers(String[] numbers) {
-        List<String> list = Arrays.asList(numbers);//asList формує список на основі масива
-        Optional<Integer> increasingNumbers = list.stream()//NullPointerExceptions
+        List<String> list = Arrays.asList(numbers);
+        Optional<Integer> increasingNumbers = list.stream()
                 .filter(this::getOrderlyIncreasingDigits)
                 .map(Integer::parseInt)
                 .findFirst();
@@ -23,19 +23,5 @@ public class AscendingOrderNumberPrinter {
     }
 }
 
-
-//    TreeSet<Integer> set = new TreeSet<>();
-//        for (String number : numbers) {
-//                if (getOrderlyIncreasingDigits(number)) {
-//                int i = Integer.parseInt(number);
-//                set.add(i);
-//                }
-//                }
-//                System.out.println(set.first());
-//                }
-
-
-//Array цей клас можна використовувати для створення масиву
-//Arrays службовий клас, який містить статичні методи для маніпулювання значеннями, що зберігаються в масиві.
 
 

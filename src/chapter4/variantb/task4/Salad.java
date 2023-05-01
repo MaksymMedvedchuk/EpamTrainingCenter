@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Salad {
+
     private final List<Vegetable> vegetableList = new ArrayList<>();
 
     public void addVegetable(Vegetable vegetable) {

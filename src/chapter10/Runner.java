@@ -5,12 +5,10 @@ import java.util.Set;
 
 public class Runner {
     public static void main(String[] args) {
-//        StringReversePrinter stringReversePrinter = new StringReversePrinter();
-//        stringReversePrinter.printStringInReverse();
-//
-//        NumberWithDigitsReverseOrder number = new NumberWithDigitsReverseOrder();
-//        number.printNumberWithDigitsReverseOrder("1234567");
-
+        StringReversePrinter stringReversePrinter = new StringReversePrinter();
+        stringReversePrinter.printStringInReverse();
+        NumberWithDigitsReverseOrder number = new NumberWithDigitsReverseOrder();
+        number.printNumberWithDigitsReverseOrder("1234567");
         SetHelper<Integer> setHelper = new SetHelper<>();
         Set<Integer> firstSet = new HashSet<>();
         firstSet.add(1);
@@ -22,13 +20,10 @@ public class Runner {
         secondSet.add(5);
         System.out.println(setHelper.intersectSets(firstSet, secondSet));
         System.out.println(setHelper.unionSets(firstSet, secondSet));
-
-
-//        BracketChecker bracketChecker = new BracketChecker();
-//        System.out.println(bracketChecker.isValidBrackets("({[]})"));
-//        System.out.println(bracketChecker.isValidBrackets("({[})"));
-
-//        UniqueWordsPrinter uniqueWordsPrinter = new UniqueWordsPrinter();
-//        uniqueWordsPrinter.printerUniqueWords();
+        BracketChecker bracketChecker = new BracketChecker();
+        System.out.println(bracketChecker.isValidBrackets("({[]})"));
+        System.out.println(bracketChecker.isValidBrackets("({[})"));
+        UniqueWordsPrinter uniqueWordsPrinter = new UniqueWordsPrinter();
+        uniqueWordsPrinter.printerUniqueWords();
     }
 }

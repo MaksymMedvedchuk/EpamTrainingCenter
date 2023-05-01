@@ -8,11 +8,11 @@ public class ScannerHelper {
     public static int[] getIntsFromConsole() {
         Scanner scanner = getClosedScanner();
         System.out.print("Enter size of array: ");
-        int size = scanner.nextInt(); //scanner.nextInt() метод зчитує число, яке ми ввели і присвоює його size
-        int[] numbers = new int[size]; //створюємо масив int з дожиною size
-        System.out.print("Enter numbers: "); //заповнюємо масив
+        int size = scanner.nextInt();
+        int[] numbers = new int[size];
+        System.out.print("Enter numbers: ");
         for (int i = 0; i < size; i++) {
-            numbers[i] = scanner.nextInt(); //заповнюємо масив елементами, які вводимо з клавіатури
+            numbers[i] = scanner.nextInt();
         }
         scanner.close();
         return numbers;

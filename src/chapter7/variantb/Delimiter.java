@@ -6,8 +6,7 @@ public enum Delimiter {
     SENTENCE_PART_DOT("."),
     SENTENCE_PART_DELIMITER(" ,:;"),
     SENTENCE_DELIMITER(".!"),
-    PARAGRAPH_DELIMITER("\t\n"),
-    ;
+    PARAGRAPH_DELIMITER("\t\n");
 
     private final String delimiter;
 

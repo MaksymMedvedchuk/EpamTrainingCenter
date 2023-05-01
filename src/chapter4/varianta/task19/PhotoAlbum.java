@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoAlbum {
+
     private static final int PAGE_QUANTITY = 2;
     private List<Page> pageList = new ArrayList<>();
 

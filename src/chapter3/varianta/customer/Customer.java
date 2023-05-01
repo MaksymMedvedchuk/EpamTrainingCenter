@@ -98,4 +98,3 @@ public class Customer implements Comparable<Customer> {
     }
 }
 
-//int сортує по <>, а String по алфавітному порядку

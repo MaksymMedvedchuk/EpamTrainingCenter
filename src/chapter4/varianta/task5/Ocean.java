@@ -5,9 +5,8 @@ import java.util.List;
 
 public class Ocean {
     private String name;
-    List<Island> islandList = new ArrayList<>(); //в поле класу Ocean передаємо ліст класу Island?
+    List<Island> islandList = new ArrayList<>();
 
-//чому коли створюємо конструктор, то new ArrayList<>() стає сірим, тому що ми ініціалізуємо поле islandList через конструктор?
     public String getName() {
         return name;
     }

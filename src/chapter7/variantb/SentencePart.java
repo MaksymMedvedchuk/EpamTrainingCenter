@@ -3,6 +3,7 @@ package chapter7.variantb;
 import java.util.regex.Pattern;
 
 public abstract class SentencePart {
+
     protected String content;
 
     public SentencePart(String content) {

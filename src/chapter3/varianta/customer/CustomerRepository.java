@@ -2,7 +2,6 @@ package chapter3.varianta.customer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CustomerRepository {
 
@@ -24,22 +23,11 @@ public class CustomerRepository {
     }
 
     public List<Customer> findByNameSurnameOrder() {
-//              Перша реалізація через створення класу, який імплементить Comparator
         List<Customer> list = new ArrayList<>(customerList);
         list.sort(new Customer.Comparator());
         return list;
-//        Друга реалізація через інтерфейс Comparable
-//        return customerList.stream().sorted().collect(Collectors.toList());
-//        Третя через метод sort з використанням Comparator
-//        List<Customer> list = new ArrayList<>(customerList);
-//        list.sort(Comparator.comparing(Customer::getName).
-//        thenComparing(Customer::getSurname));
-//        return list;
+
     }
 }
 
-
-//Comparator це інтерфейс для порівняння обєктів в коллекції?
-//comparing створює компататори для порівняння парамерів обєктів?
-// через Collections ми можемо сотрувати тільки якщо в обєкта один параметр?
 

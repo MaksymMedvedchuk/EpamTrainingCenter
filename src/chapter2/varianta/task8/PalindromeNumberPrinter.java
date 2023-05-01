@@ -25,18 +25,3 @@ public class PalindromeNumberPrinter {
         return input.equals(palindromeNumber.toString());
     }
 }
-
-
-//        List<Integer> palindromesList = new ArrayList<>();
-//        for (String number : numbers) {
-//            if (isPalindrome(number)) {
-//                int palindromeNumber = Integer.parseInt(number);
-//                palindromesList.add(palindromeNumber);
-//            }
-//        }
-//        if (palindromesList.size() >= 2) {
-//            System.out.println("Palindrome numbers is: " + palindromesList.get(1));
-//            }
-//        else {
-//            System.out.println("Palindrome numbers is: " + palindromesList.get(0));
-//

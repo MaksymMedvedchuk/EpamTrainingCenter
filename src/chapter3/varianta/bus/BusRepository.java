@@ -16,17 +16,16 @@ public class BusRepository {
 
     public List<Bus> findByRouteNumber(String roundNumber) {
         List<Bus> list = new ArrayList<>();
-        Iterator<Bus> iterator = busList.iterator();  //Iterator працює з Bus, iterator перебирає нашу колекцію
-        while (iterator.hasNext()) { //якщо є послідуючий елемент
-            Bus bus = iterator.next();//bus присвоюємо цей елемент
+        Iterator<Bus> iterator = busList.iterator();
+        while (iterator.hasNext()) {
+            Bus bus = iterator.next();
             if (bus.getRouteNumber().equals(roundNumber)) {
                 list.add(bus);
             }
         }
         return list;
     }
-//equals Порівнює цей рядок із вказаним об’єктом. Результат є істинним тоді і тільки тоді, коли аргумент не є нульовим
-// і є об’єктом String, який представляє ту саму послідовність символів, що й цей об’єкт.
+
     public List<Bus> findByExploitationMoreGivenPeriod(int exploitationYears) {
         List<Bus> list = new ArrayList<>();
         Iterator<Bus> iterator = busList.iterator();

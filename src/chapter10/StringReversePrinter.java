@@ -11,7 +11,7 @@ public class StringReversePrinter {
 
     private static final String DELIMITER = "\n";
 
-    public void printStringInReverse() { //переробив метод
+    public void printStringInReverse() {
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         String text = inputOutputHelper.getTextFromInputFile();
         List<String> list = new ArrayList<>();

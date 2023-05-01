@@ -34,8 +34,8 @@ public class InputOutputHelper {
 
     public String getTextFromArchive() {
         StringBuilder stringBuilder = new StringBuilder();
-        try (ZipFile zipFile = new ZipFile(PropertyReader.getProperties(PropertiesKeys.INPUT_ARCHIVE_FILE))) { // звернення до архіва
-            Enumeration<? extends ZipEntry> enumeration = zipFile.entries();//повертає все що лежить в архіві
+        try (ZipFile zipFile = new ZipFile(PropertyReader.getProperties(PropertiesKeys.INPUT_ARCHIVE_FILE))) {
+            Enumeration<? extends ZipEntry> enumeration = zipFile.entries();
             ZipEntry zipEntry = enumeration.nextElement();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(zipFile.getInputStream(zipEntry)));
             String stringFromText;

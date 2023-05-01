@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class SetHelper<E> {
 
-    public Set<E> intersectSets(Set<E> firstSet, Set<E> secondSet) { //нове
+    public Set<E> intersectSets(Set<E> firstSet, Set<E> secondSet) {
         Set<E> result = new HashSet<>(firstSet);
         result.retainAll(secondSet);
         return result;

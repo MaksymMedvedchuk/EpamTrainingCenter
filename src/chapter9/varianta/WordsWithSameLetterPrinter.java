@@ -10,7 +10,7 @@ public class WordsWithSameLetterPrinter {
 
     private static final String WORD_REGEX = "[a-zA-Z]+";
 
-    public void printWordsWithSameLastAndFirstLetterFollowOneAnother() { //зробив хелпер на токінайзер
+    public void printWordsWithSameLastAndFirstLetterFollowOneAnother() {
         InputOutputHelper inputOutputHelper = new InputOutputHelper();
         StringBuilder stringBuilder = new StringBuilder();
         List<String> list = new ArrayList<>();

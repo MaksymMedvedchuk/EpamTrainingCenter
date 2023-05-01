@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 
 public class Runner {
     public static void main(String[] args) {
+
         Cabbage cabbage = Cabbage.createCabbage(10, BigDecimal.valueOf(0.5));
         Tomato tomato = new Tomato(5, BigDecimal.valueOf(0.3));
         Onion onion = new Onion(11, BigDecimal.valueOf(0.7));

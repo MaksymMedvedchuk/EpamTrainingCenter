@@ -7,7 +7,7 @@ public class AscendingDescendingNumbersPrinter {
     public void printAscendingNumbers(String[] numbers) {
         System.out.println("Numbers in Ascending Order: ");
         Arrays.stream(numbers)
-                .map(Integer::parseInt)          //mapToInt отримати потік типу int і в дужках строки конвертим в інти
+                .map(Integer::parseInt)
                 .sorted().forEach(System.out::println);
         System.out.println();
     }
@@ -16,7 +16,7 @@ public class AscendingDescendingNumbersPrinter {
         System.out.println("Numbers in Descending Order: ");
         Arrays.stream(numbers)
                 .mapToInt(Integer::parseInt)
-                .boxed()//викор boxed щоб запакувати в обгортку, бо sorted(Comparator.reverseOrder() прауює тільки з обєктами?
+                .boxed()
                 .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);
     }

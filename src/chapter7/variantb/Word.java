@@ -1,6 +1,7 @@
 package chapter7.variantb;
 
-public class Word extends SentencePart{
+public class Word extends SentencePart {
+
     public Word(String content) {
         super(content);
     }

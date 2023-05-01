@@ -8,7 +8,6 @@ public class EvenAndOddNumbersPrinter {
 
         ArrayList<Integer> even = new ArrayList<>();
         ArrayList<Integer> odd = new ArrayList<>();
-
         for (int number : numbers) {
             if (number % 2 == 0) even.add(number);
             else odd.add(number);
@@ -18,8 +17,8 @@ public class EvenAndOddNumbersPrinter {
         System.out.println();
         System.out.print("Odd numbers: ");
         odd.forEach(e -> System.out.print(e + " "));
-        }
     }
+}
 
 
 

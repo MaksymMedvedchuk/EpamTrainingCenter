@@ -34,7 +34,7 @@ public class Sentence {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (SentencePart sentencePart : sentencePartList) {
-            if ((sentencePart instanceof Word) && (sentencePartList.indexOf(sentencePart) != 0))//якщо не нульовий то ми апендимо пробіл?
+            if ((sentencePart instanceof Word) && (sentencePartList.indexOf(sentencePart) != 0))
                 builder.append(Delimiter.SENTENCE_PART_SPACE.getDelimiter());
             builder.append(sentencePart);
             if (sentencePart.equals(sentencePartList.get(sentencePartList.size() - 1)))
@@ -65,7 +65,9 @@ public class Sentence {
     }
 
     public List<SentencePart> getWordsBeginVowel() {
-        return sentencePartList.stream().map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString().toLowerCase())).filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER) && part instanceof Word && part.toString().length() >= 2).sorted(Comparator.comparing(SentencePart::toString)).collect(Collectors.toList());
+        return sentencePartList.stream().map(sentencePart -> SentencePart.parseSentencePart(sentencePart.toString()
+                .toLowerCase())).filter(part -> part.toString().matches(WORD_BEGINS_VOWEL_LETTER)
+                && part instanceof Word && part.toString().length() >= 2).sorted(Comparator.comparing(SentencePart::toString)).collect(Collectors.toList());
     }
 
     public List<SentencePart> getWordsContainingLetter(String letter) {

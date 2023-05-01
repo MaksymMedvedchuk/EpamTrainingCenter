@@ -11,7 +11,6 @@ public class Runner {
         System.out.println("Customers in alphabetical order:");
         System.out.println(CUSTOMER_REPOSITORY.findByNameSurnameOrder());
     }
-
     private static void fillRepository() {
         Customer firstCustomer = new Customer(12345, "Mikolaiv", "Artem", "Centralna 9",
                 "3234456936211484", "12361478521236");
@@ -19,7 +18,6 @@ public class Runner {
                 "3654789625683698", "12178914785234");
         Customer thirdCustomer = new Customer(69547, "Artemii", "Maksim", "Lihotnya 3",
                 "3698745632145694", "258963231456");
-
         CUSTOMER_REPOSITORY.addCustomer(firstCustomer);
         CUSTOMER_REPOSITORY.addCustomer(secondCustomer);
         CUSTOMER_REPOSITORY.addCustomer(thirdCustomer);

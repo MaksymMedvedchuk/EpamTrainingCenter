@@ -18,26 +18,3 @@ public class PalindromeNumbersPrinter {
         return input.equals(palindromeNumber.toString());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Arrays.stream створення стріма із масиву

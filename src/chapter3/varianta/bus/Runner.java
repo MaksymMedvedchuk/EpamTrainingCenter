@@ -10,12 +10,9 @@ public class Runner {
                 2012, 400000);
         Bus thirdBus = new Bus("Driver2 J.M.", "L775FD", "720A", "TOYOTA",
                 2015, 550000);
-
-
         BUS_REPOSITORY.addDBuses(firstBus);
         BUS_REPOSITORY.addDBuses(secondBus);
         BUS_REPOSITORY.addDBuses(thirdBus);
-
         System.out.println(BUS_REPOSITORY.findByRouteNumber("720A"));
         System.out.println();
         System.out.println(BUS_REPOSITORY.findByExploitationMoreGivenPeriod(30));

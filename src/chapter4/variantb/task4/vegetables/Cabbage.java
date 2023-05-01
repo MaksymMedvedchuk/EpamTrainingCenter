@@ -2,7 +2,8 @@ package chapter4.variantb.task4.vegetables;
 
 import java.math.BigDecimal;
 
-public class Cabbage extends Vegetable{
+public class Cabbage extends Vegetable {
+
     public Cabbage(int calorie, BigDecimal saltContent) {
         super(calorie, saltContent);
     }

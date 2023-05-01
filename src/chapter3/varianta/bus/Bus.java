@@ -29,8 +29,6 @@ public class Bus {
                 '}';
     }
 
-
-
     public String getSurnameAndInitials() {
         return surnameAndInitials;
     }

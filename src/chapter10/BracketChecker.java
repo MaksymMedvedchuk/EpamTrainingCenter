@@ -7,8 +7,6 @@ import java.util.Map;
 
 public class BracketChecker {
 
-    //"({[]})"
-
     public boolean isValidBrackets(String bracketString) {
         Map<Character, Character> brackets = new HashMap<>();
         brackets.put(')', '(');

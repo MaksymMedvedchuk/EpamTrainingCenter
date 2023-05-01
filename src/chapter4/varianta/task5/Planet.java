@@ -3,7 +3,7 @@ package chapter4.varianta.task5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Planet {  //чому планета містить тільки материки і океани, планета теж може містити острова? Чи типу так як є клас Океани, які можуть містити острова
+public class Planet {
     List<Mainland> mainlandList = new ArrayList<>();
     List<Ocean> oceanList = new ArrayList<>();
     private String name;
@@ -17,8 +17,8 @@ public class Planet {  //чому планета містить тільки м�
             System.out.println(mainland);
         }
     }
-//плутаюсь де створювати методи
-    public void printMainlandQuantity(){
+
+    public void printMainlandQuantity() {
         System.out.println(mainlandList.size());
     }
 
@@ -45,6 +45,4 @@ public class Planet {  //чому планета містить тільки м�
     public void setOceanList(List<Ocean> oceanList) {
         this.oceanList = oceanList;
     }
-
-
 }

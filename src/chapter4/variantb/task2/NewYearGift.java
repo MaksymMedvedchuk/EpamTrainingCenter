@@ -2,6 +2,7 @@ package chapter4.variantb.task2;
 
 import chapter4.variantb.task2.sweets.Candy;
 import chapter4.variantb.task2.sweets.Sweet;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,15 +28,15 @@ public class NewYearGift {
     public List<Candy> getCandiesSortedByWeight() {
         List<Candy> candyList = new ArrayList<>();
         for (Sweet sweet : sweetList) {
-            if (sweet instanceof Candy) {//являється змінна sweets обєктом класу Candy?
-                candyList.add((Candy) sweet);//вказуємо. що sweets ссилається на обєкт класу Candy? якщо просто sweets, то помилка
+            if (sweet instanceof Candy) {
+                candyList.add((Candy) sweet);
             }
         }
         return candyList.stream().sorted(Comparator.comparing(Candy::getWeight)).collect(Collectors.toList());
     }
 
     public List<Candy> getCandyBySugarBetween(BigDecimal min, BigDecimal max) {
-        if (min.compareTo(max) > 0){
+        if (min.compareTo(max) > 0) {
             BigDecimal temp = min;
             min = max;
             max = temp;
@@ -43,7 +44,7 @@ public class NewYearGift {
         List<Candy> candyList = new ArrayList<>();
         for (Sweet sweet : sweetList) {
             if (sweet instanceof Candy && sweet.getSugarContent().compareTo(min) >= 0
-                    && sweet.getSugarContent().compareTo(max) <= 0 ) {
+                    && sweet.getSugarContent().compareTo(max) <= 0) {
                 candyList.add((Candy) sweet);
             }
         }
@@ -51,7 +52,7 @@ public class NewYearGift {
     }
 
     public List<Sweet> getSweetList() {
-        return new ArrayList<>(sweetList);//тут можна новий лист не створювати, якщо sweetList final, тому що ми не можемо звернутися до нього з зовні?
+        return new ArrayList<>(sweetList);
     }
 
     @Override
